@@ -1,0 +1,26 @@
+{
+  "id": "R17",
+  "name": "黑底缩窗吐槽",
+  "section": "L",
+  "kind": "blackwindow",
+  "status": "待评审",
+  "when": "打断常规节奏，突出反问或吐槽",
+  "how": "修改 effect.html 顶部的 TPL 参数；图片槽填本地相对路径；start/duration 控制时间。",
+  "sfx": "静音预览；原片音效未试听，未臆配。",
+  "source": "V02 01:20（定位帧 80.00s）",
+  "source_video": "V02",
+  "source_time": 80,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R17_黑底缩窗吐槽",
+  "notes": "",
+  "tpl": {
+    "background": "../../assets/host2.jpg",
+    "text": "什么肩带尴尬根本不存在",
+    "fontSize": 37,
+    "color": "#fff",
+    "fill": "#bd8c9c"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "R07",
+  "name": "绸缎四宫格",
+  "section": "L",
+  "kind": "grid",
+  "status": "待评审",
+  "when": "同店多套造型并列对比",
+  "how": "修改 effect.html 顶部的 TPL 参数；图片槽填本地相对路径；start/duration 控制时间。",
+  "sfx": "静音预览；原片音效未试听，未臆配。",
+  "source": "V01 00:18（定位帧 18.00s）",
+  "source_video": "V01",
+  "source_time": 18,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R07_绸缎四宫格",
+  "notes": "",
+  "tpl": {
+    "background": "../../assets/satin.jpg",
+    "images": [
+      "../../assets/grid0.jpg",
+      "../../assets/grid1.jpg",
+      "../../assets/grid2.jpg",
+      "../../assets/grid3.jpg"
+    ],
+    "heading": "Statement Piece",
+    "subtitle": "wanwan share"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "R52",
+  "name": "细手写暖金总结句",
+  "section": "C",
+  "kind": "handwritten",
+  "status": "待评审",
+  "when": "一套穿搭展示后的简短感受或总结",
+  "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+  "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+  "source": "V05 01:45（105.50s）",
+  "source_video": "V05",
+  "source_time": 105.5,
+  "source_ref_time": 106,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R52_细手写暖金总结句",
+  "notes": "属于 R05 手写重点句的细字变体；使用本机手写字体近似，未获得原字体。 预览底片改用原片无字上半区域裁切放大，以避免旧字幕与模板文字重叠。",
+  "tpl": {
+    "background": "../../assets/V05/clean_handwrite.jpg",
+    "text": "简简单单是体面又耐看！",
+    "x": 360,
+    "y": 940,
+    "fontSize": 52,
+    "color": "#f0e8a1",
+    "angle": -5
+  },
+  "observation": "细线手写暖金色文字轻微向上倾斜，跨身体下部排成一行。",
+  "related": [
+    "R05"
+  ],
+  "variant": true
+}

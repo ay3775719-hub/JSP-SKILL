@@ -1,0 +1,26 @@
+{
+  "id": "R01",
+  "name": "衬线英文栏目头",
+  "section": "T",
+  "kind": "editorial",
+  "status": "待评审",
+  "when": "推荐合集与素材展示页开场",
+  "how": "修改 effect.html 顶部的 TPL 参数；图片槽填本地相对路径；start/duration 控制时间。",
+  "sfx": "静音预览；原片音效未试听，未臆配。",
+  "source": "V01 00:16（定位帧 16.00s）",
+  "source_video": "V01",
+  "source_time": 16,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R01_衬线英文栏目头",
+  "notes": "英文副行用 Great Vibes（OFL，已附字体及许可） 近似原手写字体。",
+  "tpl": {
+    "text": "Statement Piece",
+    "subtitle": "wanwan share",
+    "background": "../../assets/satin.jpg",
+    "color": "#eeecc0",
+    "fontSize": 40
+  }
+}

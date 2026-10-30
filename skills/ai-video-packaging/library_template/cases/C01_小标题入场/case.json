@@ -1,0 +1,12 @@
+{
+  "id": "C01",
+  "name": "小标题入场",
+  "section": "C",
+  "status": "入库",
+  "when": "每个组合界面左上角的小标题；口播讲到一个新的小节",
+  "how": "改 TPL.text、TPL.start；浅色底用黑字，暗画面上 TPL.color 改白色",
+  "sfx": "不配音效（跟着版式硬切进来）",
+  "source": "示例包装（大象学长包装库同款）",
+  "transparent": true,
+  "preview_bg": "#F4F1EA"
+}

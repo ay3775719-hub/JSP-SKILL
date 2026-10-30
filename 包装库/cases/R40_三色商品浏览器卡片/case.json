@@ -1,0 +1,59 @@
+{
+  "id": "R40",
+  "name": "三色商品浏览器卡片",
+  "section": "C",
+  "kind": "garmentCards",
+  "status": "待评审",
+  "when": "展示同一单品的多个颜色或款式",
+  "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+  "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+  "source": "V05 00:01（1.20s）",
+  "source_video": "V05",
+  "source_time": 1.2,
+  "source_ref_time": 1.2,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R40_三色商品浏览器卡片",
+  "notes": "商品图为原片真实裁切，未仿造商品页面；底片使用相邻镜头下移，保留原片少量字幕。",
+  "tpl": {
+    "background": "../../assets/V05/cards_bg.jpg",
+    "images": [
+      "../../assets/V05/garment_0.jpg",
+      "../../assets/V05/garment_1.jpg",
+      "../../assets/V05/garment_2.jpg"
+    ],
+    "text": "蕉内热皮501+羊毛氨基酸肌底衣",
+    "color": "#f4f791",
+    "fontSize": 38,
+    "positions": [
+      [
+        20,
+        103,
+        219,
+        265
+      ],
+      [
+        247,
+        103,
+        219,
+        265
+      ],
+      [
+        475,
+        103,
+        219,
+        265
+      ]
+    ],
+    "times": [
+      0,
+      0.06,
+      0.12
+    ]
+  },
+  "observation": "顶部三张商品白底图分别套细浏览器框，上方黄色粗斜体品名；单卡可以作为左上角挂图变体。",
+  "related": [],
+  "variant": false
+}

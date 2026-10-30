@@ -1,0 +1,39 @@
+{
+  "id": "R35",
+  "name": "报告墙与中下口播人物",
+  "section": "L",
+  "kind": "reportWall",
+  "status": "待评审",
+  "when": "讲解多份真实报告或证明材料时保留口播人物",
+  "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+  "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+  "source": "V04 00:19（19.75s）",
+  "source_video": "V04",
+  "source_time": 19.75,
+  "source_ref_time": 20.5,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R35_报告墙与中下口播人物",
+  "notes": "报告素材均为原片截图局部，部分位置重复用于示意布局，不能当作完整报告；原人物静帧蒙版边缘仍需精修。实际复用应换完整真实报告与透明口播。",
+  "tpl": {
+    "images": [
+      "../../assets/V04/report_real_0.jpg",
+      "../../assets/V04/report_real_1.jpg",
+      "../../assets/V04/report_real_2.jpg",
+      "../../assets/V04/report_real_3.jpg"
+    ],
+    "foreground": "../../assets/V04/report_host.png",
+    "foregroundX": 0,
+    "foregroundY": 0,
+    "foregroundW": 720,
+    "text": "还有那么多",
+    "fontSize": 48
+  },
+  "observation": "浅纸纹底铺多张报告，带轻阴影；中下叠透明人物，上下层分离。",
+  "related": [
+    "R11",
+    "R15"
+  ]
+}

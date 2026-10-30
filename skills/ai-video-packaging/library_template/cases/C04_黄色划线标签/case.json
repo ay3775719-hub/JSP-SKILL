@@ -1,0 +1,11 @@
+{
+  "id": "C04",
+  "name": "黄色划线标签",
+  "section": "C",
+  "status": "入库",
+  "when": "口播说到一个关键词、数字或一句小结论，放画面左上；两个并列的点上下两条",
+  "how": "改 TPL.lines 的文字和开始秒；位置 TPL.x / TPL.y；字号 TPL.size。黄色 / 黑字在 lib.js 的 YEL / INK 里统一换",
+  "sfx": "每条一声铅笔划线（pencil，增益约 -5），峰值对齐黄条开始画的那一帧",
+  "source": "示例包装（大象学长包装库同款）",
+  "transparent": true
+}

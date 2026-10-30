@@ -1,0 +1,28 @@
+{
+  "id": "R18",
+  "name": "奶油花体双行开场",
+  "section": "T",
+  "kind": "scriptTitle",
+  "status": "待评审",
+  "when": "秋冬穿搭合集开场",
+  "how": "修改 effect.html 顶部的 TPL 参数；图片槽填本地相对路径；start/duration 控制时间。",
+  "sfx": "静音预览；原片音效未试听，未臆配。",
+  "source": "V03 00:00（定位帧 0.60s）",
+  "source_video": "V03",
+  "source_time": 0.6,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R18_奶油花体双行开场",
+  "notes": "原花体字体未知，Great Vibes（OFL，已附字体及许可） 近似；原片基本为硬切保持。 预览背景使用相邻的无大标题镜头；更换无字原视频后使用。",
+  "tpl": {
+    "background": "../../assets/intro.jpg",
+    "text": "Softcore",
+    "second": "Outfit",
+    "subtitle": "3 autumn & winter",
+    "color": "#fff1bc",
+    "fontSize": 132,
+    "y": 365
+  }
+}

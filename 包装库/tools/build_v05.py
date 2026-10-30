@@ -1,0 +1,41 @@
+from pathlib import Path
+import json,cv2,numpy as np
+from PIL import Image,ImageDraw,ImageFilter
+R=Path(__file__).resolve().parents[1];A=R/'assets/V05';A.mkdir(parents=True,exist_ok=True);data=json.loads((R/'manifest.json').read_text(encoding='utf8'));assert not any(int(c['id'][1:])>=40 for c in data),'R40+ already exists'
+src=next(s for s in json.loads((R/'sources/sources.json').read_text(encoding='utf8')) if s['id']=='V05')
+def frame(t):
+ c=cv2.VideoCapture(src['path']);c.set(cv2.CAP_PROP_POS_MSEC,t*1000);ok,f=c.read();c.release();assert ok;return Image.fromarray(cv2.cvtColor(f,cv2.COLOR_BGR2RGB)).resize((720,1280))
+def save(im,name):im.save(A/name);return '../../assets/V05/'+name
+def warp(im,pts,size,name):
+ matrix=cv2.getPerspectiveTransform(np.float32(pts),np.float32([[0,0],[size[0],0],[size[0],size[1]],[0,size[1]]]));out=cv2.warpPerspective(np.array(im),matrix,size);return save(Image.fromarray(out),name)
+black=save(frame(12),'black_host.jpg');purple=save(frame(62),'purple_host.jpg');cream=save(frame(102),'cream_host.jpg');coat=save(frame(132),'coat_host.jpg');handwriteBg=save(frame(104),'handwrite_bg.jpg')
+base=frame(62);plate=Image.new('RGB',(720,1280));plate.paste(base.crop((0,0,720,120)).resize((720,180)),(0,0));plate.paste(base,(0,180));cardsBg=save(plate,'cards_bg.jpg')
+im=frame(1.8);cards=[save(im.crop(b),f'garment_{i}.jpg') for i,b in enumerate([(31,126,231,350),(254,126,459,350),(480,126,684,350)])]
+swatch=save(frame(17.5).crop((0,0,720,345)).resize((720,620)),'fabric_closeup.jpg')
+im=frame(17.5).convert('RGBA');mask=Image.new('L',(720,1280));ImageDraw.Draw(mask).polygon([(559,393),(589,386),(614,404),(628,438),(630,480),(647,513),(664,536),(679,583),(679,650),(665,693),(653,710),(649,760),(622,872),(443,836),(450,762),(457,718),(472,680),(470,640),(468,601),(487,544),(509,516),(528,477),(532,434)],fill=255);im.putalpha(mask.filter(ImageFilter.GaussianBlur(.7)));fg=save(im,'detail_foreground.png')
+im=frame(34.5);panels=[save(im.crop(b),f'detail_{i}.jpg') for i,b in enumerate([(47,99,460,474),(266,451,659,757),(77,733,424,1217)])]
+im=frame(49.5);polaroids=[warp(im,pts,(330,390),f'polaroid_{i}.jpg') for i,pts in enumerate([[(39,139),(371,107),(403,472),(65,504)],[(385,341),(719,400),(676,741),(343,677)],[(66,787),(388,750),(418,1100),(93,1134)]])]
+# Paper texture is independent of the source's baked titles and photographs.
+texture=Image.new('RGB',(720,1280),'#f8f8f6');ar=np.array(texture).astype(np.int16);rng=np.random.default_rng(45);ar+=rng.integers(-3,4,(1280,720,1),dtype=np.int16);paper=save(Image.fromarray(np.uint8(np.clip(ar,0,255))),'paper.jpg')
+new=[]
+def add(name,section,kind,t,when,tpl,obs,notes='',related=None,ref=None,variant=False):
+ id=f'R{40+len(new):02}';folder=id+'_'+name;duration=min(3,src['duration']-t)
+ c=dict(id=id,name=name,section=section,kind=kind,status='待评审',when=when,how='修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。',sfx='静音预览；原片音效尚未试听，不推断音效。',source=f'V05 {int(t)//60:02}:{int(t)%60:02}（{t:.2f}s）',source_video='V05',source_time=t,source_ref_time=ref or t,transparent=section!='L' and kind!='blurTransition',width=720,height=1280,duration=round(duration,3),folder=folder,notes=notes,tpl=tpl,observation=obs,related=related or [],variant=variant)
+ p=R/'cases'/folder;p.mkdir();frame(ref or t).save(p/'reference.jpg',quality=94);(p/'case.json').write_text(json.dumps(c,ensure_ascii=False,indent=2),encoding='utf8')
+ (p/'effect.html').write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>'+id+' '+name+'</title><link rel="stylesheet" href="../../effects/style.css"><div id="stage"></div><script>\n// 参数区：复用时修改文字、图片、时间和位置。\nconst TPL = '+json.dumps(dict(kind=kind,**tpl),ensure_ascii=False,indent=2)+';\nwindow.CASE='+json.dumps({'id':id,'name':name,'transparent':c['transparent']},ensure_ascii=False)+';</script><script src="../../effects/v05.js"></script></html>',encoding='utf8');new.append(c)
+add('三色商品浏览器卡片','C','garmentCards',1.2,'展示同一单品的多个颜色或款式',dict(background=cardsBg,images=cards,text='蕉内热皮501+羊毛氨基酸肌底衣',color='#f4f791',fontSize=38,positions=[[20,103,219,265],[247,103,219,265],[475,103,219,265]],times=[0,.06,.12]),'顶部三张商品白底图分别套细浏览器框，上方黄色粗斜体品名；单卡可以作为左上角挂图变体。','商品图为原片真实裁切，未仿造商品页面；底片使用相邻镜头下移，保留原片少量字幕。')
+add('半透明系统选择提示框','C','message',1.2,'片头向观众提出一个选择或问题',dict(background=cardsBg,title='MESSAGES',time='now',text='请选择你的秋冬穿搭',x=117,y=832,w=486,h=121,start=.1),'浅白色圆角提示框，上行小字号系统标识，下行居中中文提示。','复刻视频里的装饰提示框，不发送消息，不模拟真实通知。')
+add('杂志页复古电脑窗口','L','retroWindow',3.6,'一套穿搭作为视觉展示页或转场开场',dict(paper=paper,image=purple,heading='Colour',tag='DAILYLOOK',windowTitle='Información de Mac 101',colourName='Purple',accent='#c2ade9',angle=-5),'白色纸纹杂志页，顶端栏目和黑白标签，倾斜复古电脑窗承载穿搭，下方胶带字条、斜角 OOTD 和爱心。','复古窗口、胶带、装饰均为独立绘制；照片使用相邻无窗口镜头，人物姿态与原片不同。',['R01','R26'])
+add('头顶弧形吐槽白字','C','arcCaption',15.3,'表现冷、尴尬等反应的短句吐槽',dict(background=black,text='根本就是不敢脱',cx=360,cy=480,radius=310,span=1.18,fontSize=47,color='#ffffff',stroke='#111111',strokeWidth=7,vignette=True),'白色粗字黑边沿人物头顶弧形排列，画面四周有暗角。','弧度、字号与字距独立可改；预览使用相邻镜头，避免把原片已有弧字重复叠入。',['R04'])
+add('面料微距分屏与口播人物','L','fabricSplit',17.0,'一边展示材质细节，一边保留口播说明',dict(image=swatch,foreground=fg,text='面料粗糙',topHeight=620,labelX=188,labelY=465),'上半屏铺面料微距、下半屏黑底，右侧抠出小口播人物跨越分界；圆章形标签压在微距上。','微距使用原片干净局部放大；口播蒙版为静帧轮廓，发丝与衣边仍需精修。',['R11','R16'])
+add('径向速度线与斜词标签','E','speedLines',21.25,'集中指出两个问题或制造短促冲击感',dict(background=black,labels=[{'text':'勒肉','x':75,'y':530,'angle':-9},{'text':'臃肿','x':535,'y':705,'angle':20}],fontSize=56,strokeWidth=9,center=[360,630],count=38,start=0),'白色放射线从四边朝中心汇聚，两个黑字白边标签歪斜落在身体两侧。','速度线密度和相位为手工近似，不是逐根追踪原素材。',['R04'])
+add('三图版型说明与手绘箭头','L','detailTriptych',31.2,'介绍肩型、收腰、袖长等多个设计细节',dict(paper=paper,images=panels,labels=['直角正肩','收腰设计','袖子加长款'],subtitle='The OOTD',heading='Colour',tag='DAILYLOOK',times=[0,.6,1.2]),'三张细节图错落排列，黑色粗斜体标签加英文小字，虚线/手绘曲线箭头指向对应细节。','图片取自原片；部分箭头触及截图边缘，复刻稿重新绘制独立箭头，局部构图近似。',['R07','R27'],ref=34.5)
+add('Daily Photo海报相框','L','dailyFrame',36.0,'一套穿搭或人物视频的统一海报外框',dict(paper=paper,image=black,title='My Daily Photo',footer='NEW OOTD\n25mm f/2.0 1/100s ISO530',keywords=['显瘦显薄','优化身材比例'],accent='#f1f58a'),'上方大花体 My Daily Photo，四周留白，星芒与左侧箭头装饰，底部相机参数与装饰条码。','相框、条码、星芒为独立元素；装饰条码不编码商品信息，预览人物使用相邻镜头。',['R23'])
+add('图钉拍立得三图拼贴','L','pinnedPhotos',48.6,'快速总结三套造型或三种风格',dict(paper=paper,images=polaroids,text='完全不一样的风格',color='#f1eb61',positions=[[35,115,365,440,-7],[355,337,350,425,12],[60,765,350,420,-5]],times=[0,.15,.3]),'三张拍立得错落旋转，每张上方压黑色图钉，纸纹页顶留栏目，下方一行黄色斜体总结。','照片从原片做透视校正，边缘可能包含少量旧相纸；图钉用矢量近似。',['R06','R26'],ref=49.5)
+add('Look编号与星号搭配清单','C','lookList',56.0,'一套穿搭亮相时列出组成单品',dict(background=purple,text='（Look 01）',items=['蕉内肌底衣烟棠紫','吊带小上衣','黑色半裙'],x=100,y=150,color='#a99bd3',fontSize=43,itemSize=26,delay=.12),'左上浅紫斜体 Look 编号配白边，下面三行白字清单，旁边黄色小星点。','Look 01/02 和单品列表作为参数；可与 R47 的海报外框组合。',['R02','R23'])
+add('明黄色粗斜体卖点','C','boldClaim',24.4,'短句强调版型或功能卖点',dict(background=black,text='保暖就选对的',x=360,y=916,fontSize=49,color='#f3f78c',angle=0,shadow='#6e713e'),'明黄/浅黄粗斜体大字带立体短阴影，单句出现，保留口播主体。','基于 R32 的重点词用途增加粗斜体与短阴影变体；原字体未提供。',['R32'],variant=True)
+add('浅紫粗斜体面料卖点','C','boldClaim',64.0,'与服装颜色呼应的材质或版型短句',dict(background=purple,text='版型修身  不勒肉',x=360,y=920,fontSize=48,color='#c6afea',angle=0,shadow='#70617f'),'浅紫色粗斜体卖点大字配暗紫阴影，与紫色单品形成配色呼应。','与 R50 共用字体结构，作为配色预设保留；原字体未知。',['R50'],ref=64.5,variant=True)
+add('细手写暖金总结句','C','handwritten',105.5,'一套穿搭展示后的简短感受或总结',dict(background=handwriteBg,text='简简单单是体面又耐看！',x=360,y=940,fontSize=52,color='#f0e8a1',angle=-5),'细线手写暖金色文字轻微向上倾斜，跨身体下部排成一行。','属于 R05 手写重点句的细字变体；使用本机手写字体近似，未获得原字体。',['R05'],ref=106,variant=True)
+add('柔焦圆窗与弧字收尾','L','circleOutro',143.15,'视频末尾的轻松总结或告别',dict(image=black,text='穿的舒服还不挨冻',cx=360,cy=520,radius=310,blur=22,textRadius=350,fontSize=45,span=1.5),'整幅人物画面模糊作底，上部圆窗保留清晰口播，圆窗上方弧形白字形成收尾。','模糊与圆窗从同一可换底片绘制；预览为静帧，替换视频可保持真实口播。',['R38','R43'],ref=144)
+add('模糊变焦镜头切换','E','blurTransition',19.5,'从细节、造型或章节切换到下一个镜头',dict(images=[black,purple],transitionAt=1,duration=.34,blur=17,zoom=1.16,shift=28),'切换附近短暂出现模糊、缩放与水平拖移，随即恢复清晰画面。','用缩放与高斯模糊近似原片的方向性拖影，未复刻光流/逐像素运动模糊。',['R29'],ref=20)
+data.extend(new);(R/'manifest.json').write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf8');(R/'sources/V05/新增模板.json').write_text(json.dumps(new,ensure_ascii=False,indent=2),encoding='utf8');print(f'Added {len(new)} cases R40–R54; total {len(data)}')

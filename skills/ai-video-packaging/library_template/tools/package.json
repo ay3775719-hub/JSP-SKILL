@@ -1,0 +1,9 @@
+{
+  "name": "my-packaging-library-tools",
+  "private": true,
+  "type": "module",
+  "description": "包装库渲染工具：node render.mjs / node preview.mjs",
+  "dependencies": {
+    "puppeteer-core": "^23.0.0"
+  }
+}

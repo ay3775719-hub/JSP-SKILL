@@ -1,0 +1,37 @@
+{
+  "id": "R53",
+  "name": "柔焦圆窗与弧字收尾",
+  "section": "L",
+  "kind": "circleOutro",
+  "status": "待评审",
+  "when": "视频末尾的轻松总结或告别",
+  "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+  "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+  "source": "V05 02:23（143.15s）",
+  "source_video": "V05",
+  "source_time": 143.15,
+  "source_ref_time": 144,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 1.85,
+  "folder": "R53_柔焦圆窗与弧字收尾",
+  "notes": "模糊与圆窗从同一可换底片绘制；预览为静帧，替换视频可保持真实口播。",
+  "tpl": {
+    "image": "../../assets/V05/black_host.jpg",
+    "text": "穿的舒服还不挨冻",
+    "cx": 360,
+    "cy": 520,
+    "radius": 310,
+    "blur": 22,
+    "textRadius": 350,
+    "fontSize": 45,
+    "span": 1.5
+  },
+  "observation": "整幅人物画面模糊作底，上部圆窗保留清晰口播，圆窗上方弧形白字形成收尾。",
+  "related": [
+    "R38",
+    "R43"
+  ],
+  "variant": false
+}

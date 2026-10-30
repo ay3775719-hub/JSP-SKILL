@@ -1,0 +1,46 @@
+{
+  "id": "R24",
+  "name": "星号服装货号标注",
+  "section": "C",
+  "kind": "codes",
+  "status": "待评审",
+  "when": "穿搭定格时列出衣服与货号",
+  "how": "修改 effect.html 顶部的 TPL 参数；图片槽填本地相对路径；start/duration 控制时间。",
+  "sfx": "静音预览；原片音效未试听，未臆配。",
+  "source": "V03 00:22（定位帧 22.00s）",
+  "source_video": "V03",
+  "source_time": 22,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R24_星号服装货号标注",
+  "notes": "",
+  "tpl": {
+    "background": "../../assets/codesbg.jpg",
+    "items": [
+      {
+        "text": "*外套/479764",
+        "x": 165,
+        "y": 465
+      },
+      {
+        "text": "*围巾/478313",
+        "x": 400,
+        "y": 520
+      },
+      {
+        "text": "*内搭/479693",
+        "x": 445,
+        "y": 610
+      },
+      {
+        "text": "*裤子/479695",
+        "x": 200,
+        "y": 992
+      }
+    ],
+    "color": "#fff",
+    "fontSize": 29
+  }
+}

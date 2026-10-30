@@ -1,0 +1,55 @@
+{
+  "id": "R37",
+  "name": "虚线圆形跟随放大镜",
+  "section": "E",
+  "kind": "magnifier",
+  "status": "待评审",
+  "when": "产品局部、标签或细节需要放大时",
+  "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+  "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+  "source": "V04 00:28（28.10s）",
+  "source_video": "V04",
+  "source_time": 28.1,
+  "source_ref_time": 28.7,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R37_虚线圆形跟随放大镜",
+  "notes": "圆内从同一无字静帧重新取样放大，圆心轨迹为对照原片手动近似；实际视频须设置相应跟随坐标。 预览底片保留原片自带字幕，这些不是模板文字层；实际使用请换无字视频。透明导出仅含本模板的可改元素。",
+  "tpl": {
+    "background": "../../assets/V04/magnify_bg.jpg",
+    "image": "../../assets/V04/magnify_bg.jpg",
+    "radius": 145,
+    "zoom": 1.32,
+    "keyframes": [
+      [
+        0,
+        345,
+        785
+      ],
+      [
+        1,
+        360,
+        780
+      ],
+      [
+        2,
+        374,
+        764
+      ],
+      [
+        3,
+        360,
+        777
+      ]
+    ],
+    "dash": 18,
+    "gap": 11,
+    "strokeWidth": 5,
+    "color": "#ffffff",
+    "enterDuration": 0.12
+  },
+  "observation": "标签处出现白色虚线圆，圆内实像放大，圆心随目标小范围移动。",
+  "related": []
+}

@@ -1,0 +1,27 @@
+<!doctype html><meta charset="utf-8"><body><script src="../../effects/lib.js"></script><script>
+// C04 黄色划线标签：黄色色块 12 帧匀速从左往右画出，黑字晚 4 帧淡入；可以一条也可以上下两条
+// 什么时候用：口播说到一个关键词 / 数字 / 小结论，放画面左上；在暗、亮画面上都看得清
+// ===== 模板参数：只改这里 =====
+const TPL = {
+  lines: [['10 亿 token', 0.3], ['全部开源', 1.6]],   // [文字, 开始画的秒]
+  x: 90, y: 100, gap: 30,                            // 第一条左上角；上下两条的间距
+  size: 52,                                          // 字号
+};
+// ================================
+window.META = {dur: 3.0, sfx: TPL.lines.map(([, t]) => ['pencil', t])};
+const H = Math.round(TPL.size * 1.62);
+const bars = TPL.lines.map(([txt, t0], i) => {
+  const box = el('div', {left: TPL.x + 'px', top: (TPL.y + i * (H + TPL.gap)) + 'px', height: H + 'px', overflow: 'hidden'});
+  const bar = el('div', {left: 0, top: 0, height: H + 'px', width: 0, background: YEL}, box);
+  const tx = el('div', {left: '26px', top: 0, font: `900 ${TPL.size}px/${H}px ${HEI}`, color: INK, whiteSpace: 'nowrap', opacity: 0}, box, txt);
+  return {box, bar, tx, t0};
+});
+window.render = async (t) => {
+  await document.fonts.ready;
+  bars.forEach(({box, bar, tx, t0}) => {
+    const W = tx.scrollWidth + 52; box.style.width = W + 'px';
+    bar.style.width = (W * clamp((t - t0) / (12 / 30))) + 'px';
+    tx.style.opacity = clamp((t - t0 - 4 / 30) / 0.1);
+  });
+};
+</script>

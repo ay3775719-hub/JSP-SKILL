@@ -1,0 +1,41 @@
+{
+  "id": "R49",
+  "name": "Look编号与星号搭配清单",
+  "section": "C",
+  "kind": "lookList",
+  "status": "待评审",
+  "when": "一套穿搭亮相时列出组成单品",
+  "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+  "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+  "source": "V05 00:56（56.00s）",
+  "source_video": "V05",
+  "source_time": 56.0,
+  "source_ref_time": 56.0,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R49_Look编号与星号搭配清单",
+  "notes": "Look 01/02 和单品列表作为参数；可与 R47 的海报外框组合。",
+  "tpl": {
+    "background": "../../assets/V05/purple_host.jpg",
+    "text": "（Look 01）",
+    "items": [
+      "蕉内肌底衣烟棠紫",
+      "吊带小上衣",
+      "黑色半裙"
+    ],
+    "x": 100,
+    "y": 150,
+    "color": "#a99bd3",
+    "fontSize": 43,
+    "itemSize": 26,
+    "delay": 0.12
+  },
+  "observation": "左上浅紫斜体 Look 编号配白边，下面三行白字清单，旁边黄色小星点。",
+  "related": [
+    "R02",
+    "R23"
+  ],
+  "variant": false
+}

@@ -1,0 +1,84 @@
+{
+  "libraryCount": 54,
+  "newCases": 15,
+  "checks": [
+    {
+      "id": "R40",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R41",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R42",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R43",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R44",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R45",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R46",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R47",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R48",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R49",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R50",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R51",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R52",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R53",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R54",
+      "decode": true,
+      "deterministic": true
+    }
+  ],
+  "browserErrors": [],
+  "audio": "静音预览，未试听原片",
+  "status": "待评审初稿"
+}

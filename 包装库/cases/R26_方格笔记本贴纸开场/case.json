@@ -1,0 +1,26 @@
+{
+  "id": "R26",
+  "name": "方格笔记本贴纸开场",
+  "section": "L",
+  "kind": "notebook",
+  "status": "待评审",
+  "when": "用手账感引出单套穿搭或合集",
+  "how": "修改 effect.html 顶部的 TPL 参数；图片槽填本地相对路径；start/duration 控制时间。",
+  "sfx": "静音预览；原片音效未试听，未臆配。",
+  "source": "V03 00:02（定位帧 2.00s）",
+  "source_video": "V03",
+  "source_time": 2,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R26_方格笔记本贴纸开场",
+  "notes": "笔记本背景来自原片去字修补；人物为手工轮廓，装饰星号重新绘制。",
+  "tpl": {
+    "background": "../../assets/notebook.jpg",
+    "foreground": "../../assets/sticker.png",
+    "text": "Autumn Citywalk",
+    "color": "#e9001e",
+    "fontSize": 67
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "R42",
+  "name": "杂志页复古电脑窗口",
+  "section": "L",
+  "kind": "retroWindow",
+  "status": "待评审",
+  "when": "一套穿搭作为视觉展示页或转场开场",
+  "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+  "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+  "source": "V05 00:03（3.60s）",
+  "source_video": "V05",
+  "source_time": 3.6,
+  "source_ref_time": 3.6,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R42_杂志页复古电脑窗口",
+  "notes": "复古窗口、胶带、装饰均为独立绘制；照片使用相邻无窗口镜头，人物姿态与原片不同。",
+  "tpl": {
+    "paper": "../../assets/V05/paper.jpg",
+    "image": "../../assets/V05/purple_host.jpg",
+    "heading": "Colour",
+    "tag": "DAILYLOOK",
+    "windowTitle": "Información de Mac 101",
+    "colourName": "Purple",
+    "accent": "#c2ade9",
+    "angle": -5
+  },
+  "observation": "白色纸纹杂志页，顶端栏目和黑白标签，倾斜复古电脑窗承载穿搭，下方胶带字条、斜角 OOTD 和爱心。",
+  "related": [
+    "R01",
+    "R26"
+  ],
+  "variant": false
+}

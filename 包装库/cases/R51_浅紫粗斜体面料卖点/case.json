@@ -1,0 +1,35 @@
+{
+  "id": "R51",
+  "name": "浅紫粗斜体面料卖点",
+  "section": "C",
+  "kind": "boldClaim",
+  "status": "待评审",
+  "when": "与服装颜色呼应的材质或版型短句",
+  "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+  "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+  "source": "V05 01:04（64.00s）",
+  "source_video": "V05",
+  "source_time": 64.0,
+  "source_ref_time": 64.5,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R51_浅紫粗斜体面料卖点",
+  "notes": "与 R50 共用字体结构，作为配色预设保留；原字体未知。 预览底片改用原片无字上半区域裁切放大，以避免旧字幕与模板文字重叠。",
+  "tpl": {
+    "background": "../../assets/V05/clean_purple.jpg",
+    "text": "版型修身  不勒肉",
+    "x": 360,
+    "y": 920,
+    "fontSize": 48,
+    "color": "#c6afea",
+    "angle": 0,
+    "shadow": "#70617f"
+  },
+  "observation": "浅紫色粗斜体卖点大字配暗紫阴影，与紫色单品形成配色呼应。",
+  "related": [
+    "R50"
+  ],
+  "variant": true
+}

@@ -1,0 +1,82 @@
+{
+  "id": "R34",
+  "name": "草本成分六圆递进",
+  "section": "E",
+  "kind": "ingredients",
+  "status": "待评审",
+  "when": "在产品实拍上分批介绍多个成分或组成项",
+  "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+  "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+  "source": "V04 00:17（17.65s）",
+  "source_video": "V04",
+  "source_time": 17.65,
+  "source_ref_time": 19.0,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R34_草本成分六圆递进",
+  "notes": "图片与文字已分层。演示圆图来自原片并修补旧字，植物纹理和无字底图存在修补差异；须以实际产品资料替换成分名称。 预览底片保留原片自带字幕，这些不是模板文字层；实际使用请换无字视频。透明导出仅含本模板的可改元素。",
+  "tpl": {
+    "background": "../../assets/V04/ingredient_bg.jpg",
+    "images": [
+      "../../assets/V04/ingredient_0.jpg",
+      "../../assets/V04/ingredient_1.jpg",
+      "../../assets/V04/ingredient_2.jpg",
+      "../../assets/V04/ingredient_3.jpg",
+      "../../assets/V04/ingredient_4.jpg",
+      "../../assets/V04/ingredient_5.jpg"
+    ],
+    "labels": [
+      "侧柏叶",
+      "姜根",
+      "山茶籽",
+      "何首乌",
+      "人参",
+      "当归"
+    ],
+    "positions": [
+      [
+        54,
+        54,
+        123
+      ],
+      [
+        220,
+        54,
+        132
+      ],
+      [
+        398,
+        54,
+        132
+      ],
+      [
+        74,
+        240,
+        124
+      ],
+      [
+        231,
+        250,
+        134
+      ],
+      [
+        396,
+        230,
+        148
+      ]
+    ],
+    "times": [
+      0,
+      0.18,
+      0.27,
+      0.54,
+      0.67,
+      0.8
+    ],
+    "fontSize": 40
+  },
+  "observation": "上部六张圆形成分图按上排、下排陆续累积出现，中心叠白色黑边标签。",
+  "related": []
+}

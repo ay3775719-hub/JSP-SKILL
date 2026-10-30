@@ -1,0 +1,29 @@
+{
+  "id": "R25",
+  "name": "三重人像穿搭定格",
+  "section": "L",
+  "kind": "echo",
+  "status": "待评审",
+  "when": "一套造型用三个姿态或人像组成画面",
+  "how": "修改 effect.html 顶部的 TPL 参数；图片槽填本地相对路径；start/duration 控制时间。",
+  "sfx": "静音预览；原片音效未试听，未臆配。",
+  "source": "V03 00:24（定位帧 24.00s）",
+  "source_video": "V03",
+  "source_time": 24,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R25_三重人像穿搭定格",
+  "notes": "原片三个姿态各不相同；演示用同一透明人像占位，三个槽可分别替换。",
+  "tpl": {
+    "background": "../../assets/echobg.jpg",
+    "images": [
+      "../../assets/echo.png",
+      "../../assets/echo.png",
+      "../../assets/echo.png"
+    ],
+    "text": "* Jun’s outfit *",
+    "subtitle": "就算通勤也要穿的好看"
+  }
+}

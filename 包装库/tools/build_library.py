@@ -1,0 +1,81 @@
+from pathlib import Path
+import json,cv2,numpy as np,shutil
+from PIL import Image,ImageDraw,ImageFilter
+R=Path(__file__).resolve().parents[1]; A=R/'assets'; A.mkdir(exist_ok=True)
+S=json.loads((R/'sources/sources.json').read_text(encoding='utf8'))
+def frame(v,t):
+ c=cv2.VideoCapture(S[v-1]['path']); c.set(cv2.CAP_PROP_POS_MSEC,t*1000); ok,f=c.read(); c.release()
+ if not ok: raise ValueError((v,t))
+ return Image.fromarray(cv2.cvtColor(f,cv2.COLOR_BGR2RGB))
+def save(im,name): im.save(A/name);return '../../assets/'+name
+def crop(v,t,box,name):return save(frame(v,t).crop(box),name)
+def clean(v,t,boxes,name):
+ im=np.array(frame(v,t)); mask=np.zeros(im.shape[:2],np.uint8)
+ for x,y,w,h in boxes: mask[y:y+h,x:x+w]=255
+ im=cv2.inpaint(im,mask,7,cv2.INPAINT_TELEA)
+ return save(Image.fromarray(im),name)
+def cut(v,t,box,pts,name,outline=0):
+ im=frame(v,t).crop(box).convert('RGBA');mask=Image.new('L',im.size);ImageDraw.Draw(mask).polygon(pts,fill=255);mask=mask.filter(ImageFilter.GaussianBlur(.8));im.putalpha(mask)
+ if outline:
+  white=Image.new('RGBA',im.size,'white');white.putalpha(mask.filter(ImageFilter.MaxFilter(outline*2+1)));white.alpha_composite(im);im=white
+ return save(im,name)
+bg=save(frame(1,18).crop((0,1080,720,1260)).resize((720,1280)), 'satin.jpg')
+host1=save(frame(1,26),'host1.jpg');host2=clean(2,42,[(190,1060,350,85)],'host2.jpg')
+host3=clean(3,10,[(240,110,260,110),(45,540,645,275)],'host3.jpg')
+photo1=crop(1,4,(38,150,330,525),'photo1.jpg');photo2=crop(1,4,(435,210,655,445),'photo2.jpg');photo3=crop(1,4,(45,610,340,905),'photo3.jpg')
+grid=[]
+for j,b in enumerate([(60,285,305,610),(347,285,594,610),(60,650,305,970),(347,650,594,970)]):grid.append(crop(1,18,b,f'grid{j}.jpg'))
+shop=crop(1,30,(133,195,587,1020),'shop.jpg'); browser=crop(1,22,(217,245,684,868),'browser.jpg');product=crop(1,36,(425,110,682,611),'product.jpg');single=crop(1,40,(90,245,627,940),'single.jpg');shopstrip=crop(1,28,(368,830,679,918),'shopstrip.jpg')
+girl=cut(1,16,(18,250,270,1110),[(125,20),(165,20),(195,85),(230,130),(245,320),(215,455),(245,800),(225,850),(150,830),(50,780),(40,475),(25,390),(50,200),(85,120),(85,55)],'girl.png')
+girl2=cut(1,16,(265,224,462,968),[(100,12),(145,12),(165,65),(190,145),(176,290),(165,355),(183,700),(145,735),(70,730),(30,710),(10,380),(30,120),(57,70),(60,25)],'girl2.png')
+girl3=cut(1,16,(438,312,715,1170),[(160,8),(215,10),(240,60),(256,160),(266,290),(230,340),(231,680),(175,825),(96,852),(62,825),(70,740),(50,630),(35,410),(7,325),(60,100),(115,65)],'girl3.png')
+hostcut=cut(1,72,(330,590,690,1115),[(180,10),(255,5),(300,55),(320,140),(340,190),(350,525),(5,525),(7,325),(40,220),(55,130),(90,70),(140,20)],'hostcut.png',5)
+bookphoto=crop(1,72,(36,226,467,794),'bookphoto.jpg')
+comments=[]
+for j,b in enumerate([(57,38,493,146),(32,151,688,240),(32,242,688,385),(32,668,626,754),(33,760,626,858),(43,875,583,951),(33,973,686,1062),(33,1130,575,1196)]):comments.append(crop(2,16,b,f'comment{j}.jpg'))
+pip=crop(2,18,(27,630,400,1116),'pip.jpg')
+work=clean(3,6,[(170,110,380,70),(140,420,480,400)],'work.jpg');red=clean(3,36,[(190,110,380,105),(120,530,530,420)],'city.jpg');pink=clean(3,60,[(220,110,350,80),(110,540,520,390)],'date.jpg')
+wood=clean(3,10,[(240,105,300,120),(40,535,650,280)],'wood.jpg')
+# Foreground silhouette is an editable demonstration mask, not an inferred original layer.
+fg=cut(3,10,(220,370,432,1210),[(80,15),(125,20),(147,65),(135,110),(162,140),(180,220),(204,300),(186,395),(159,430),(166,735),(183,789),(157,825),(118,830),(98,780),(67,830),(35,820),(15,795),(24,710),(22,450),(5,400),(10,285),(24,160),(52,122),(49,65)],'lookfg.png')
+echo=cut(3,24,(199,345,504,1180),[(167,17),(211,30),(228,76),(200,120),(230,150),(282,180),(294,287),(263,315),(270,370),(251,420),(220,510),(233,774),(197,825),(149,822),(141,795),(113,802),(95,760),(100,490),(70,403),(40,337),(15,282),(29,190),(78,148),(124,132),(140,77)],'echo.png')
+sticker=cut(3,2,(180,540,565,1230),[(260,10),(300,20),(327,80),(350,127),(365,195),(342,241),(312,253),(295,321),(267,368),(235,483),(216,625),(244,650),(242,675),(210,685),(173,655),(160,620),(100,650),(60,650),(35,610),(46,554),(75,440),(94,359),(43,336),(20,290),(40,231),(90,120),(144,95),(191,62),(219,20)],'sticker.png',5)
+book=clean(3,2,[(250,110,240,65),(280,395,400,190),(100,580,535,645)],'notebook.jpg')
+data=[]
+def add(name,section,kind,v,t,when,tpl,notes=''):
+ n=len(data)+1; id=f'R{n:02}';folder=f'{id}_{name}'; d=dict(id=id,name=name,section=section,kind=kind,status='待评审',when=when,how='修改 effect.html 顶部的 TPL 参数；图片槽填本地相对路径；start/duration 控制时间。',sfx='静音预览；原片音效未试听，未臆配。',source=f'V{v:02} {int(t)//60:02}:{int(t)%60:02}（定位帧 {t:.2f}s）',source_video=f'V{v:02}',source_time=t,transparent=section!='L',width=720,height=1280,duration=3,folder=folder,notes=notes,tpl=tpl)
+ p=R/'cases'/folder;p.mkdir(parents=True,exist_ok=True);frame(v,t).save(p/'reference.jpg',quality=93)
+ (p/'case.json').write_text(json.dumps(d,ensure_ascii=False,indent=2),encoding='utf8')
+ (p/'effect.html').write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>'+id+' '+name+'</title><link rel="stylesheet" href="../../effects/style.css"><div id="stage"></div><script>\n// 复用时只修改下面的 TPL；所有动画由 render(t) 驱动。\nconst TPL = '+json.dumps(dict(kind=kind,**tpl),ensure_ascii=False,indent=2)+';\nwindow.CASE='+json.dumps(dict(id=id,name=name,transparent=d['transparent']))+';</script><script src="../../effects/engine.js"></script></html>',encoding='utf8');data.append(d)
+add('衬线英文栏目头','T','editorial',1,16,'推荐合集与素材展示页开场',dict(text='Statement Piece',subtitle='wanwan share',background=bg,color='#eeecc0',fontSize=40),'英文副行用 Gabriola 近似原手写字体。')
+add('花体店铺编号','C','number',1,30,'逐家店铺推荐，持续标识当前章节',dict(text='Number 01',brand='OGOKO',color='#fff',background=bg,fontSize=70),'原花体字体未知；使用本机 Gabriola 近似。')
+add('店铺截图与推荐标题','T','announcement',1,28,'口播引出一家店铺',dict(text='第一家:ogoko',image=shopstrip,background=host1,fontSize=57,color='#fff'))
+add('四角递进评价词','C','scatter',1,13.4,'列举印象、问题或反面标签',dict(texts=['这人不靠谱🤪','不成熟','不稳重','处理不好工作的感觉'],times=[0,.45,1.0,1.65],background=host1,fontSize=40,color='#fff'))
+add('暖黄色手写重点句','C','gold',1,76,'一句短评或总结强调',dict(text='爱装扮的装货',background=host1,color='#eee4a0',fontSize=63))
+add('绸缎三图错落拼贴','L','collage',1,8,'展示多张穿搭案例，保留照片错落感',dict(background=bg,images=[photo1,photo2,photo3],heading='',color='#fff'))
+add('绸缎四宫格','L','grid',1,18,'同店多套造型并列对比',dict(background=bg,images=grid,heading='Statement Piece',subtitle='wanwan share'))
+add('三人抠图错位排布','L','lineup',1,16,'同一风格的三套穿搭集中展示',dict(background=bg,images=[girl,girl2,girl3],heading='Statement Piece',subtitle='wanwan share'),'演示人像为手工轮廓蒙版，发丝与脚边需精修；换图时提供透明 PNG。')
+add('网页商品单与侧边人像','L','browser',1,22,'用真实店铺商品页辅助讲价格',dict(background=bg,image=browser,foreground=girl,heading='Statement Piece',subtitle='wanwan share'),'商品页保留真实截图；侧边人物为轮廓示意槽。')
+add('商品卡与大人像','L','product',1,36,'讲单品价格，右上放真实商品详情',dict(background=bg,image=product,foreground=girl2,brand='OGOKO',text='Number 01'),'演示人像与原单品人物不同；替换透明人像即可保持结构。')
+add('大图与右下口播人像','L','hostpip',1,72,'讲解一张穿搭参考图',dict(background=bg,image=bookphoto,foreground=hostcut,brand='卡拉尔贝齐',text='Number 03'),'口播演示为静帧轮廓蒙版；实际用时换透明视频或逐帧人像。')
+add('绸缎单图展示','L','single',1,40,'单套造型或商品细节独立展示',dict(background=bg,image=single,brand='OGOKO',text='Number 01'))
+add('粉色半透明字幕条','C','pinkbar',2,24,'日常口播字幕或短句说明',dict(text='穿紧身点就容易出汗',background=host2,fontSize=38,color='#fff',fill='#eeb6c7',opacity=.69))
+add('粉色重点词放大','C','pinkbig',2,42,'压缩为一句核心卖点',dict(text='又舒适又好看',background=host2,fontSize=56,color='#fff',fill='#eeb6c7',opacity=.74))
+add('真实评论逐条堆叠','L','comments',2,16,'回应观众高频提问或评论反馈',dict(background=host2,images=comments,text='你们问爆了的bra推荐'),'评论均为原片真实截图裁切；替换图片槽，不生成仿造评论。')
+add('左下矩形画中画','L','pip',2,18,'口播旁展示旧视频或穿搭证据',dict(background=host2,image=pip),'原片画中画示例裁切，实际可替换视频文件。')
+add('黑底缩窗吐槽','L','blackwindow',2,80,'打断常规节奏，突出反问或吐槽',dict(background=host2,text='什么肩带尴尬根本不存在',fontSize=37,color='#fff',fill='#bd8c9c'))
+add('奶油花体双行开场','T','scriptTitle',3,.6,'秋冬穿搭合集开场',dict(background=clean(3,.6,[(100,380,540,400)],'intro.jpg'),text='Softcore',second='Outfit',subtitle='3 autumn & winter',color='#fff1bc',fontSize=132,y=365),'原花体字体未知，Gabriola 近似；原片基本为硬切保持。')
+add('绿色通勤章节标题','T','scriptTitle',3,6,'通勤穿搭章节开场',dict(background=work,text='Go to',second='Work',subtitle='with new outfit',color='#83d49a',fontSize=150,y=400),'清理底图在原字区域有修补痕迹；换原始无字视频即可消除。')
+add('红色漫步章节标题','T','scriptTitle',3,36,'周末或城市漫步章节开场',dict(background=red,text='Citywalk',second='Autumn',subtitle='with new outfit',color='#ed001b',fontSize=141,y=500),'原花体字体未知，Gabriola 近似。')
+add('粉色约会章节标题','T','scriptTitle',3,60,'约会穿搭章节开场',dict(background=pink,text='Go on a',second='Date',subtitle='after work',color='#e887b6',fontSize=144,y=500),'原花体字体未知，Gabriola 近似。')
+add('人物身后Look编号','L','behindLook',3,10,'新一套穿搭亮相；支持 Look1/2/3',dict(background=wood,foreground=fg,text='Look1',color='#80d49a',fontSize=230,foregroundX=220,foregroundY=370,foregroundW=212),'必须使用分离背景和透明前景。演示蒙版为静帧手工轮廓，原背景去字有修补。')
+add('顶部花体栏目与深底小标题','C','masthead',3,12,'持续标识栏目，并显示当前讲解小标题',dict(background=clean(3,12,[(215,110,340,115)],'mastheadbg.jpg'),text='* Jun’s outfit *',subtitle='搭配藏青色长裤',color='#f6edc4',fontSize=43))
+add('星号服装货号标注','C','codes',3,22,'穿搭定格时列出衣服与货号',dict(background=clean(3,22,[(160,110,420,120),(135,445,250,80),(380,490,310,90),(410,580,265,70),(160,970,250,65)],'codesbg.jpg'),items=[{'text':'*外套/479764','x':165,'y':465},{'text':'*围巾/478313','x':400,'y':520},{'text':'*内搭/479693','x':445,'y':610},{'text':'*裤子/479695','x':200,'y':992}],color='#fff',fontSize=29))
+add('三重人像穿搭定格','L','echo',3,24,'一套造型用三个姿态或人像组成画面',dict(background=clean(3,14,[(210,110,370,110),(155,350,390,870)],'echobg.jpg'),images=[echo,echo,echo],text='* Jun’s outfit *',subtitle='就算通勤也要穿的好看'),'原片三个姿态各不相同；演示用同一透明人像占位，三个槽可分别替换。')
+add('方格笔记本贴纸开场','L','notebook',3,2,'用手账感引出单套穿搭或合集',dict(background=book,foreground=sticker,text='Autumn Citywalk',color='#e9001e',fontSize=67),'笔记本背景来自原片去字修补；人物为手工轮廓，装饰星号重新绘制。')
+add('侧边星号卖点短句','C','features',3,48,'口播或展示时在留白处补充两条卖点',dict(background=clean(3,48,[(220,110,350,110),(370,380,300,130)],'featurebg.jpg'),texts=['*保暖力max','*可抵御-15℃严寒'],color='#fff',fontSize=30))
+add('底部活动信息三行','C','closing',3,80,'视频结尾叠加活动、优惠或提示',dict(background=clean(3,80,[(100,800,540,240)],'closingbg.jpg'),texts=['*双十一活动*','经典款/设计师款折扣力度大','*领券购买更优惠哦'],color='#fff',fontSize=31))
+add('商品截图翻页入场','L','pageflip',1,28.8,'店铺切换后让真实商品页翻入画面',dict(background=bg,image=shop,brand='OGOKO',text='Number 01'),'原片为弯曲卷页；此版用透视旋转和侧边阴影近似，尚未实现网格弯曲。')
+add('手写合集主标题与拼贴','L','cover',1,4,'推荐合集的主标题封面',dict(background=bg,images=[photo1,photo2,photo3],foreground=girl,text='学生党通勤衣服店铺',fontSize=60,color='#fff'),'布局与手写文字可改；装饰与轮廓为近似，未复刻原人物发丝与闪光粒子。')
+(R/'manifest.json').write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf8')
+print(f'Created {len(data)} templates')

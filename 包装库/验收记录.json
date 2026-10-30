@@ -1,0 +1,20 @@
+{
+  "cases": 54,
+  "decodedPreviews": 54,
+  "galleryCards": 54,
+  "browserErrors": [],
+  "status": "全部为待评审初稿",
+  "audio": "未试听；静音预览",
+  "alphaExportSample": {
+    "id": "R13",
+    "width": 1080,
+    "height": 1920,
+    "codec": "ProRes 4444",
+    "alphaRange": [
+      0,
+      255
+    ]
+  },
+  "latestBatch": "V05",
+  "latestBatchChecks": "sources/V05/验收记录.json"
+}

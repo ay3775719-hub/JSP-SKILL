@@ -1,0 +1,618 @@
+[
+  {
+    "id": "R40",
+    "name": "三色商品浏览器卡片",
+    "section": "C",
+    "kind": "garmentCards",
+    "status": "待评审",
+    "when": "展示同一单品的多个颜色或款式",
+    "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+    "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+    "source": "V05 00:01（1.20s）",
+    "source_video": "V05",
+    "source_time": 1.2,
+    "source_ref_time": 1.2,
+    "transparent": true,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R40_三色商品浏览器卡片",
+    "notes": "商品图为原片真实裁切，未仿造商品页面；底片使用相邻镜头下移，保留原片少量字幕。",
+    "tpl": {
+      "background": "../../assets/V05/cards_bg.jpg",
+      "images": [
+        "../../assets/V05/garment_0.jpg",
+        "../../assets/V05/garment_1.jpg",
+        "../../assets/V05/garment_2.jpg"
+      ],
+      "text": "蕉内热皮501+羊毛氨基酸肌底衣",
+      "color": "#f4f791",
+      "fontSize": 38,
+      "positions": [
+        [
+          20,
+          103,
+          219,
+          265
+        ],
+        [
+          247,
+          103,
+          219,
+          265
+        ],
+        [
+          475,
+          103,
+          219,
+          265
+        ]
+      ],
+      "times": [
+        0,
+        0.06,
+        0.12
+      ]
+    },
+    "observation": "顶部三张商品白底图分别套细浏览器框，上方黄色粗斜体品名；单卡可以作为左上角挂图变体。",
+    "related": [],
+    "variant": false
+  },
+  {
+    "id": "R41",
+    "name": "半透明系统选择提示框",
+    "section": "C",
+    "kind": "message",
+    "status": "待评审",
+    "when": "片头向观众提出一个选择或问题",
+    "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+    "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+    "source": "V05 00:01（1.20s）",
+    "source_video": "V05",
+    "source_time": 1.2,
+    "source_ref_time": 1.2,
+    "transparent": true,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R41_半透明系统选择提示框",
+    "notes": "复刻视频里的装饰提示框，不发送消息，不模拟真实通知。",
+    "tpl": {
+      "background": "../../assets/V05/cards_bg.jpg",
+      "title": "MESSAGES",
+      "time": "now",
+      "text": "请选择你的秋冬穿搭",
+      "x": 117,
+      "y": 832,
+      "w": 486,
+      "h": 121,
+      "start": 0.1
+    },
+    "observation": "浅白色圆角提示框，上行小字号系统标识，下行居中中文提示。",
+    "related": [],
+    "variant": false
+  },
+  {
+    "id": "R42",
+    "name": "杂志页复古电脑窗口",
+    "section": "L",
+    "kind": "retroWindow",
+    "status": "待评审",
+    "when": "一套穿搭作为视觉展示页或转场开场",
+    "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+    "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+    "source": "V05 00:03（3.60s）",
+    "source_video": "V05",
+    "source_time": 3.6,
+    "source_ref_time": 3.6,
+    "transparent": false,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R42_杂志页复古电脑窗口",
+    "notes": "复古窗口、胶带、装饰均为独立绘制；照片使用相邻无窗口镜头，人物姿态与原片不同。",
+    "tpl": {
+      "paper": "../../assets/V05/paper.jpg",
+      "image": "../../assets/V05/purple_host.jpg",
+      "heading": "Colour",
+      "tag": "DAILYLOOK",
+      "windowTitle": "Información de Mac 101",
+      "colourName": "Purple",
+      "accent": "#c2ade9",
+      "angle": -5
+    },
+    "observation": "白色纸纹杂志页，顶端栏目和黑白标签，倾斜复古电脑窗承载穿搭，下方胶带字条、斜角 OOTD 和爱心。",
+    "related": [
+      "R01",
+      "R26"
+    ],
+    "variant": false
+  },
+  {
+    "id": "R43",
+    "name": "头顶弧形吐槽白字",
+    "section": "C",
+    "kind": "arcCaption",
+    "status": "待评审",
+    "when": "表现冷、尴尬等反应的短句吐槽",
+    "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+    "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+    "source": "V05 00:15（15.30s）",
+    "source_video": "V05",
+    "source_time": 15.3,
+    "source_ref_time": 15.3,
+    "transparent": true,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R43_头顶弧形吐槽白字",
+    "notes": "弧度、字号与字距独立可改；预览使用相邻镜头，避免把原片已有弧字重复叠入。",
+    "tpl": {
+      "background": "../../assets/V05/black_host.jpg",
+      "text": "根本就是不敢脱",
+      "cx": 360,
+      "cy": 480,
+      "radius": 310,
+      "span": 1.18,
+      "fontSize": 47,
+      "color": "#ffffff",
+      "stroke": "#111111",
+      "strokeWidth": 7,
+      "vignette": true
+    },
+    "observation": "白色粗字黑边沿人物头顶弧形排列，画面四周有暗角。",
+    "related": [
+      "R04"
+    ],
+    "variant": false
+  },
+  {
+    "id": "R44",
+    "name": "面料微距分屏与口播人物",
+    "section": "L",
+    "kind": "fabricSplit",
+    "status": "待评审",
+    "when": "一边展示材质细节，一边保留口播说明",
+    "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+    "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+    "source": "V05 00:17（17.00s）",
+    "source_video": "V05",
+    "source_time": 17.0,
+    "source_ref_time": 17.0,
+    "transparent": false,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R44_面料微距分屏与口播人物",
+    "notes": "微距使用原片干净局部放大；口播蒙版为静帧轮廓，发丝与衣边仍需精修。",
+    "tpl": {
+      "image": "../../assets/V05/fabric_closeup.jpg",
+      "foreground": "../../assets/V05/detail_foreground.png",
+      "text": "面料粗糙",
+      "topHeight": 620,
+      "labelX": 188,
+      "labelY": 465
+    },
+    "observation": "上半屏铺面料微距、下半屏黑底，右侧抠出小口播人物跨越分界；圆章形标签压在微距上。",
+    "related": [
+      "R11",
+      "R16"
+    ],
+    "variant": false
+  },
+  {
+    "id": "R45",
+    "name": "径向速度线与斜词标签",
+    "section": "E",
+    "kind": "speedLines",
+    "status": "待评审",
+    "when": "集中指出两个问题或制造短促冲击感",
+    "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+    "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+    "source": "V05 00:21（21.25s）",
+    "source_video": "V05",
+    "source_time": 21.25,
+    "source_ref_time": 21.25,
+    "transparent": true,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R45_径向速度线与斜词标签",
+    "notes": "速度线密度和相位为手工近似，不是逐根追踪原素材。",
+    "tpl": {
+      "background": "../../assets/V05/black_host.jpg",
+      "labels": [
+        {
+          "text": "勒肉",
+          "x": 75,
+          "y": 530,
+          "angle": -9
+        },
+        {
+          "text": "臃肿",
+          "x": 535,
+          "y": 705,
+          "angle": 20
+        }
+      ],
+      "fontSize": 56,
+      "strokeWidth": 9,
+      "center": [
+        360,
+        630
+      ],
+      "count": 38,
+      "start": 0
+    },
+    "observation": "白色放射线从四边朝中心汇聚，两个黑字白边标签歪斜落在身体两侧。",
+    "related": [
+      "R04"
+    ],
+    "variant": false
+  },
+  {
+    "id": "R46",
+    "name": "三图版型说明与手绘箭头",
+    "section": "L",
+    "kind": "detailTriptych",
+    "status": "待评审",
+    "when": "介绍肩型、收腰、袖长等多个设计细节",
+    "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+    "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+    "source": "V05 00:31（31.20s）",
+    "source_video": "V05",
+    "source_time": 31.2,
+    "source_ref_time": 34.5,
+    "transparent": false,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R46_三图版型说明与手绘箭头",
+    "notes": "图片取自原片；部分箭头触及截图边缘，复刻稿重新绘制独立箭头，局部构图近似。",
+    "tpl": {
+      "paper": "../../assets/V05/paper.jpg",
+      "images": [
+        "../../assets/V05/detail_0.jpg",
+        "../../assets/V05/detail_1.jpg",
+        "../../assets/V05/detail_2.jpg"
+      ],
+      "labels": [
+        "直角正肩",
+        "收腰设计",
+        "袖子加长款"
+      ],
+      "subtitle": "The OOTD",
+      "heading": "Colour",
+      "tag": "DAILYLOOK",
+      "times": [
+        0,
+        0.6,
+        1.2
+      ]
+    },
+    "observation": "三张细节图错落排列，黑色粗斜体标签加英文小字，虚线/手绘曲线箭头指向对应细节。",
+    "related": [
+      "R07",
+      "R27"
+    ],
+    "variant": false
+  },
+  {
+    "id": "R47",
+    "name": "Daily Photo海报相框",
+    "section": "L",
+    "kind": "dailyFrame",
+    "status": "待评审",
+    "when": "一套穿搭或人物视频的统一海报外框",
+    "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+    "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+    "source": "V05 00:36（36.00s）",
+    "source_video": "V05",
+    "source_time": 36.0,
+    "source_ref_time": 36.0,
+    "transparent": false,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R47_Daily Photo海报相框",
+    "notes": "相框、条码、星芒为独立元素；装饰条码不编码商品信息，预览人物使用相邻镜头。 预览底片改用原片无字上半区域裁切放大，以避免旧字幕与模板文字重叠。",
+    "tpl": {
+      "paper": "../../assets/V05/paper.jpg",
+      "image": "../../assets/V05/clean_black.jpg",
+      "title": "My Daily Photo",
+      "footer": "NEW OOTD\n25mm f/2.0 1/100s ISO530",
+      "keywords": [
+        "显瘦显薄",
+        "优化身材比例"
+      ],
+      "accent": "#f1f58a"
+    },
+    "observation": "上方大花体 My Daily Photo，四周留白，星芒与左侧箭头装饰，底部相机参数与装饰条码。",
+    "related": [
+      "R23"
+    ],
+    "variant": false
+  },
+  {
+    "id": "R48",
+    "name": "图钉拍立得三图拼贴",
+    "section": "L",
+    "kind": "pinnedPhotos",
+    "status": "待评审",
+    "when": "快速总结三套造型或三种风格",
+    "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+    "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+    "source": "V05 00:48（48.60s）",
+    "source_video": "V05",
+    "source_time": 48.6,
+    "source_ref_time": 49.5,
+    "transparent": false,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R48_图钉拍立得三图拼贴",
+    "notes": "照片从原片做透视校正，边缘可能包含少量旧相纸；图钉用矢量近似。",
+    "tpl": {
+      "paper": "../../assets/V05/paper.jpg",
+      "images": [
+        "../../assets/V05/polaroid_0.jpg",
+        "../../assets/V05/polaroid_1.jpg",
+        "../../assets/V05/polaroid_2.jpg"
+      ],
+      "text": "完全不一样的风格",
+      "color": "#f1eb61",
+      "positions": [
+        [
+          35,
+          115,
+          365,
+          440,
+          -7
+        ],
+        [
+          355,
+          337,
+          350,
+          425,
+          12
+        ],
+        [
+          60,
+          765,
+          350,
+          420,
+          -5
+        ]
+      ],
+      "times": [
+        0,
+        0.15,
+        0.3
+      ]
+    },
+    "observation": "三张拍立得错落旋转，每张上方压黑色图钉，纸纹页顶留栏目，下方一行黄色斜体总结。",
+    "related": [
+      "R06",
+      "R26"
+    ],
+    "variant": false
+  },
+  {
+    "id": "R49",
+    "name": "Look编号与星号搭配清单",
+    "section": "C",
+    "kind": "lookList",
+    "status": "待评审",
+    "when": "一套穿搭亮相时列出组成单品",
+    "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+    "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+    "source": "V05 00:56（56.00s）",
+    "source_video": "V05",
+    "source_time": 56.0,
+    "source_ref_time": 56.0,
+    "transparent": true,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R49_Look编号与星号搭配清单",
+    "notes": "Look 01/02 和单品列表作为参数；可与 R47 的海报外框组合。",
+    "tpl": {
+      "background": "../../assets/V05/purple_host.jpg",
+      "text": "（Look 01）",
+      "items": [
+        "蕉内肌底衣烟棠紫",
+        "吊带小上衣",
+        "黑色半裙"
+      ],
+      "x": 100,
+      "y": 150,
+      "color": "#a99bd3",
+      "fontSize": 43,
+      "itemSize": 26,
+      "delay": 0.12
+    },
+    "observation": "左上浅紫斜体 Look 编号配白边，下面三行白字清单，旁边黄色小星点。",
+    "related": [
+      "R02",
+      "R23"
+    ],
+    "variant": false
+  },
+  {
+    "id": "R50",
+    "name": "明黄色粗斜体卖点",
+    "section": "C",
+    "kind": "boldClaim",
+    "status": "待评审",
+    "when": "短句强调版型或功能卖点",
+    "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+    "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+    "source": "V05 00:51（51.80s）",
+    "source_video": "V05",
+    "source_time": 51.8,
+    "source_ref_time": 52.0,
+    "transparent": true,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R50_明黄色粗斜体卖点",
+    "notes": "基于 R32 的重点词用途增加粗斜体与短阴影变体；原字体未提供。 预览底片改用原片无字上半区域裁切放大，以避免旧字幕与模板文字重叠。",
+    "tpl": {
+      "background": "../../assets/V05/clean_black.jpg",
+      "text": "浪漫且有生命力",
+      "x": 360,
+      "y": 916,
+      "fontSize": 49,
+      "color": "#f3f78c",
+      "angle": 0,
+      "shadow": "#6e713e"
+    },
+    "observation": "明黄/浅黄粗斜体大字带立体短阴影，单句出现，保留口播主体。",
+    "related": [
+      "R32"
+    ],
+    "variant": true
+  },
+  {
+    "id": "R51",
+    "name": "浅紫粗斜体面料卖点",
+    "section": "C",
+    "kind": "boldClaim",
+    "status": "待评审",
+    "when": "与服装颜色呼应的材质或版型短句",
+    "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+    "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+    "source": "V05 01:04（64.00s）",
+    "source_video": "V05",
+    "source_time": 64.0,
+    "source_ref_time": 64.5,
+    "transparent": true,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R51_浅紫粗斜体面料卖点",
+    "notes": "与 R50 共用字体结构，作为配色预设保留；原字体未知。 预览底片改用原片无字上半区域裁切放大，以避免旧字幕与模板文字重叠。",
+    "tpl": {
+      "background": "../../assets/V05/clean_purple.jpg",
+      "text": "版型修身  不勒肉",
+      "x": 360,
+      "y": 920,
+      "fontSize": 48,
+      "color": "#c6afea",
+      "angle": 0,
+      "shadow": "#70617f"
+    },
+    "observation": "浅紫色粗斜体卖点大字配暗紫阴影，与紫色单品形成配色呼应。",
+    "related": [
+      "R50"
+    ],
+    "variant": true
+  },
+  {
+    "id": "R52",
+    "name": "细手写暖金总结句",
+    "section": "C",
+    "kind": "handwritten",
+    "status": "待评审",
+    "when": "一套穿搭展示后的简短感受或总结",
+    "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+    "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+    "source": "V05 01:45（105.50s）",
+    "source_video": "V05",
+    "source_time": 105.5,
+    "source_ref_time": 106,
+    "transparent": true,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R52_细手写暖金总结句",
+    "notes": "属于 R05 手写重点句的细字变体；使用本机手写字体近似，未获得原字体。 预览底片改用原片无字上半区域裁切放大，以避免旧字幕与模板文字重叠。",
+    "tpl": {
+      "background": "../../assets/V05/clean_handwrite.jpg",
+      "text": "简简单单是体面又耐看！",
+      "x": 360,
+      "y": 940,
+      "fontSize": 52,
+      "color": "#f0e8a1",
+      "angle": -5
+    },
+    "observation": "细线手写暖金色文字轻微向上倾斜，跨身体下部排成一行。",
+    "related": [
+      "R05"
+    ],
+    "variant": true
+  },
+  {
+    "id": "R53",
+    "name": "柔焦圆窗与弧字收尾",
+    "section": "L",
+    "kind": "circleOutro",
+    "status": "待评审",
+    "when": "视频末尾的轻松总结或告别",
+    "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+    "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+    "source": "V05 02:23（143.15s）",
+    "source_video": "V05",
+    "source_time": 143.15,
+    "source_ref_time": 144,
+    "transparent": false,
+    "width": 720,
+    "height": 1280,
+    "duration": 1.85,
+    "folder": "R53_柔焦圆窗与弧字收尾",
+    "notes": "模糊与圆窗从同一可换底片绘制；预览为静帧，替换视频可保持真实口播。",
+    "tpl": {
+      "image": "../../assets/V05/black_host.jpg",
+      "text": "穿的舒服还不挨冻",
+      "cx": 360,
+      "cy": 520,
+      "radius": 310,
+      "blur": 22,
+      "textRadius": 350,
+      "fontSize": 45,
+      "span": 1.5
+    },
+    "observation": "整幅人物画面模糊作底，上部圆窗保留清晰口播，圆窗上方弧形白字形成收尾。",
+    "related": [
+      "R38",
+      "R43"
+    ],
+    "variant": false
+  },
+  {
+    "id": "R54",
+    "name": "模糊变焦镜头切换",
+    "section": "E",
+    "kind": "blurTransition",
+    "status": "待评审",
+    "when": "从细节、造型或章节切换到下一个镜头",
+    "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+    "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+    "source": "V05 00:19（19.50s）",
+    "source_video": "V05",
+    "source_time": 19.5,
+    "source_ref_time": 20,
+    "transparent": false,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R54_模糊变焦镜头切换",
+    "notes": "用缩放与高斯模糊近似原片的方向性拖影，未复刻光流/逐像素运动模糊。",
+    "tpl": {
+      "images": [
+        "../../assets/V05/black_host.jpg",
+        "../../assets/V05/purple_host.jpg"
+      ],
+      "transitionAt": 1,
+      "duration": 0.34,
+      "blur": 17,
+      "zoom": 1.16,
+      "shift": 28
+    },
+    "observation": "切换附近短暂出现模糊、缩放与水平拖移，随即恢复清晰画面。",
+    "related": [
+      "R29"
+    ],
+    "variant": false
+  }
+]

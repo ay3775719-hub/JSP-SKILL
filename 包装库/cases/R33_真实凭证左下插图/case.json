@@ -1,0 +1,33 @@
+{
+  "id": "R33",
+  "name": "真实凭证左下插图",
+  "section": "L",
+  "kind": "proofInset",
+  "status": "待评审",
+  "when": "手持产品时插入用户提供的真实凭证",
+  "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+  "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+  "source": "V04 00:05（5.60s）",
+  "source_video": "V04",
+  "source_time": 5.6,
+  "source_ref_time": 5.6,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R33_真实凭证左下插图",
+  "notes": "凭证为原片真实局部截图，未仿造文件、印章或文字；实际复用须换对应真实资料。 预览底片保留原片自带字幕，这些不是模板文字层；实际使用请换无字视频。透明导出仅含本模板的可改元素。",
+  "tpl": {
+    "background": "../../assets/V04/product.jpg",
+    "image": "../../assets/V04/proof_real.jpg",
+    "x": 63,
+    "y": 666,
+    "w": 202,
+    "h": 286,
+    "start": 0.02
+  },
+  "observation": "产品镜头保持全屏，真实凭证直角缩图在左下硬切出现。",
+  "related": [
+    "R16"
+  ]
+}

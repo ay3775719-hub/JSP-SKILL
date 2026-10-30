@@ -1,0 +1,64 @@
+{
+  "id": "R48",
+  "name": "图钉拍立得三图拼贴",
+  "section": "L",
+  "kind": "pinnedPhotos",
+  "status": "待评审",
+  "when": "快速总结三套造型或三种风格",
+  "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+  "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+  "source": "V05 00:48（48.60s）",
+  "source_video": "V05",
+  "source_time": 48.6,
+  "source_ref_time": 49.5,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R48_图钉拍立得三图拼贴",
+  "notes": "照片从原片做透视校正，边缘可能包含少量旧相纸；图钉用矢量近似。",
+  "tpl": {
+    "paper": "../../assets/V05/paper.jpg",
+    "images": [
+      "../../assets/V05/polaroid_0.jpg",
+      "../../assets/V05/polaroid_1.jpg",
+      "../../assets/V05/polaroid_2.jpg"
+    ],
+    "text": "完全不一样的风格",
+    "color": "#f1eb61",
+    "positions": [
+      [
+        35,
+        115,
+        365,
+        440,
+        -7
+      ],
+      [
+        355,
+        337,
+        350,
+        425,
+        12
+      ],
+      [
+        60,
+        765,
+        350,
+        420,
+        -5
+      ]
+    ],
+    "times": [
+      0,
+      0.15,
+      0.3
+    ]
+  },
+  "observation": "三张拍立得错落旋转，每张上方压黑色图钉，纸纹页顶留栏目，下方一行黄色斜体总结。",
+  "related": [
+    "R06",
+    "R26"
+  ],
+  "variant": false
+}

@@ -1,0 +1,8 @@
+const fs=require('fs'),path=require('path'),{pathToFileURL}=require('url'),{execFileSync}=require('child_process');
+const R=path.resolve(__dirname,'..'),cfg=require('./runtime.json'),data=JSON.parse(fs.readFileSync(path.join(R,'manifest.json'),'utf8'));
+const {chromium}=require(cfg.playwright);
+(async()=>{let b=await chromium.launch({executablePath:cfg.chrome,headless:true,args:['--allow-file-access-from-files']});let p=await b.newPage({viewport:{width:1280,height:900}});let errors=[];p.on('pageerror',e=>errors.push(e.message));
+await p.goto(pathToFileURL(path.join(R,'index.html')).href);await p.waitForSelector('.card');let count=await p.locator('.card').count();if(count!==data.length)throw Error('Card count '+count);
+await p.locator('.card').first().click();await p.waitForSelector('dialog[open]');await p.waitForTimeout(500);await p.locator('#stop').click();await p.screenshot({path:path.join(R,'预览页截图.png'),fullPage:true});await b.close();
+let movies=0;for(const c of data){let folder=path.join(R,'cases',c.folder);for(const f of ['effect.html','case.json','reference.jpg','reference.mp4','preview.mp4','poster.png','compare.jpg'])if(!fs.existsSync(path.join(folder,f)))throw Error(c.id+' missing '+f);execFileSync(cfg.ffmpeg,['-v','error','-i',path.join(folder,'preview.mp4'),'-f','null','-'],{windowsHide:true});movies++;}
+if(errors.length)throw Error(errors.join('\n'));fs.writeFileSync(path.join(R,'验收记录.json'),JSON.stringify({cases:data.length,decodedPreviews:movies,galleryCards:count,browserErrors:errors,status:'全部为待评审初稿',audio:'未试听；静音预览'},null,2));console.log(data.length+' cases and previews decoded; gallery opened with no JS errors');})().catch(e=>{console.error(e);process.exitCode=1});

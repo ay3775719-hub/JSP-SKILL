@@ -1,0 +1,26 @@
+{
+  "id": "R02",
+  "name": "花体店铺编号",
+  "section": "C",
+  "kind": "number",
+  "status": "待评审",
+  "when": "逐家店铺推荐，持续标识当前章节",
+  "how": "修改 effect.html 顶部的 TPL 参数；图片槽填本地相对路径；start/duration 控制时间。",
+  "sfx": "静音预览；原片音效未试听，未臆配。",
+  "source": "V01 00:30（定位帧 30.00s）",
+  "source_video": "V01",
+  "source_time": 30,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R02_花体店铺编号",
+  "notes": "原花体字体未知；使用本机 Great Vibes（OFL，已附字体及许可） 近似。",
+  "tpl": {
+    "text": "Number 01",
+    "brand": "OGOKO",
+    "color": "#fff",
+    "background": "../../assets/satin.jpg",
+    "fontSize": 70
+  }
+}

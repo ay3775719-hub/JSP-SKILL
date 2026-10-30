@@ -1,0 +1,29 @@
+{
+  "id": "R28",
+  "name": "底部活动信息三行",
+  "section": "C",
+  "kind": "closing",
+  "status": "待评审",
+  "when": "视频结尾叠加活动、优惠或提示",
+  "how": "修改 effect.html 顶部的 TPL 参数；图片槽填本地相对路径；start/duration 控制时间。",
+  "sfx": "静音预览；原片音效未试听，未臆配。",
+  "source": "V03 01:20（定位帧 80.00s）",
+  "source_video": "V03",
+  "source_time": 80,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R28_底部活动信息三行",
+  "notes": "",
+  "tpl": {
+    "background": "../../assets/closingbg.jpg",
+    "texts": [
+      "*双十一活动*",
+      "经典款/设计师款折扣力度大",
+      "*领券购买更优惠哦"
+    ],
+    "color": "#fff",
+    "fontSize": 31
+  }
+}

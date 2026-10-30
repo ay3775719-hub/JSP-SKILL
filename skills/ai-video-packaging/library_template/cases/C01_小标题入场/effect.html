@@ -1,0 +1,20 @@
+<!doctype html><meta charset="utf-8"><body><script src="../../effects/lib.js"></script><script>
+// C01 左上小标题：黄色竖条 6 帧从下往上画出，字在遮罩里逐字往上冒（每字错开 2 帧、8 帧缓出）
+// 什么时候用：组合界面（浅色底、录屏、左素材右口播）左上角的小标题；所有组合界面统一用它
+// ===== 模板参数：只改这里 =====
+const TPL = {
+  text: 'Claude × 达芬奇',
+  start: 0.1,                 // 竖条开始画的秒
+  x: 108, y: 96, size: 54,    // 位置、字号
+  color: INK,                 // 浅色底用黑字；放在暗画面上改成 '#fff'
+};
+// ================================
+window.META = {dur: 2.0, sfx: []};
+const accent = el('div', {left: TPL.x + 'px', top: (TPL.y + 6) + 'px', width: '8px', height: (TPL.size + 8) + 'px', borderRadius: '4px', background: YEL, transformOrigin: '50% 100%'});
+const mask = el('div', {left: (TPL.x + 24) + 'px', top: TPL.y + 'px', height: (TPL.size + 22) + 'px', overflow: 'hidden', display: 'flex'});
+const chars = [...TPL.text].map((ch) => el('span', {position: 'relative', display: 'inline-block', font: `900 ${TPL.size}px/${TPL.size + 22}px ${HEI}`, color: TPL.color, whiteSpace: 'pre'}, mask, ch));
+window.render = (t) => {
+  tf(accent, `scaleY(${tw(t, TPL.start, 6 / 30, 0, 1)})`); accent.style.opacity = t >= TPL.start ? 1 : 0;
+  chars.forEach((s, i) => { const t1 = TPL.start + 0.06 + i * 2 / 30; tf(s, `translateY(${tw(t, t1, 8 / 30, TPL.size + 30, 0)}px)`); s.style.opacity = clamp((t - t1) / 0.1); });
+};
+</script>

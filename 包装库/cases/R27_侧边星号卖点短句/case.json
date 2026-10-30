@@ -1,0 +1,28 @@
+{
+  "id": "R27",
+  "name": "侧边星号卖点短句",
+  "section": "C",
+  "kind": "features",
+  "status": "待评审",
+  "when": "口播或展示时在留白处补充两条卖点",
+  "how": "修改 effect.html 顶部的 TPL 参数；图片槽填本地相对路径；start/duration 控制时间。",
+  "sfx": "静音预览；原片音效未试听，未臆配。",
+  "source": "V03 00:48（定位帧 48.00s）",
+  "source_video": "V03",
+  "source_time": 48,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R27_侧边星号卖点短句",
+  "notes": "",
+  "tpl": {
+    "background": "../../assets/featurebg.jpg",
+    "texts": [
+      "*保暖力max",
+      "*可抵御-15℃严寒"
+    ],
+    "color": "#fff",
+    "fontSize": 30
+  }
+}

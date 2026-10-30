@@ -1,0 +1,424 @@
+[
+  {
+    "id": "R31",
+    "name": "白字黑描边口播字幕",
+    "section": "S",
+    "kind": "outlineCaption",
+    "status": "待评审",
+    "when": "日常口播与真实演示的常规字幕",
+    "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+    "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+    "source": "V04 00:09（9.20s）",
+    "source_video": "V04",
+    "source_time": 9.2,
+    "source_ref_time": 9.2,
+    "transparent": true,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R31_白字黑描边口播字幕",
+    "notes": "字体以本机微软雅黑近似；无原字体文件。字幕无色底，与 R13 粉色字幕区分。",
+    "tpl": {
+      "text": "那以前我也是啊",
+      "background": "../../assets/V04/plain_bg.jpg",
+      "fontSize": 42,
+      "color": "#ffffff",
+      "stroke": "#161616",
+      "strokeWidth": 2.6,
+      "y": 943
+    },
+    "observation": "居中单行白字、细黑描边，位于画面下部；整句硬切。",
+    "related": [
+      "R13"
+    ]
+  },
+  {
+    "id": "R32",
+    "name": "浅金色混排重点词",
+    "section": "C",
+    "kind": "goldCaption",
+    "status": "待评审",
+    "when": "在一句话内强调一个关键短词",
+    "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+    "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+    "source": "V04 00:05（5.60s）",
+    "source_video": "V04",
+    "source_time": 5.6,
+    "source_ref_time": 5.6,
+    "transparent": true,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R32_浅金色混排重点词",
+    "notes": "文字来自原片，只复刻混排结构；示例字样不替新产品作事实确认。 预览底片保留原片自带字幕，这些不是模板文字层；实际使用请换无字视频。透明导出仅含本模板的可改元素。",
+    "tpl": {
+      "segments": [
+        {
+          "text": "“药监局” ",
+          "color": "#eeecc0",
+          "size": 40
+        },
+        {
+          "text": "防脱",
+          "color": "#eeecc0",
+          "size": 52
+        },
+        {
+          "text": "认证买的",
+          "color": "#ffffff",
+          "size": 40
+        }
+      ],
+      "background": "../../assets/V04/product.jpg",
+      "y": 520,
+      "strokeWidth": 2.5
+    },
+    "observation": "同一句内以浅金色和更大字号突出短词，其余部分白字黑边。",
+    "related": [
+      "R31"
+    ]
+  },
+  {
+    "id": "R33",
+    "name": "真实凭证左下插图",
+    "section": "L",
+    "kind": "proofInset",
+    "status": "待评审",
+    "when": "手持产品时插入用户提供的真实凭证",
+    "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+    "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+    "source": "V04 00:05（5.60s）",
+    "source_video": "V04",
+    "source_time": 5.6,
+    "source_ref_time": 5.6,
+    "transparent": false,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R33_真实凭证左下插图",
+    "notes": "凭证为原片真实局部截图，未仿造文件、印章或文字；实际复用须换对应真实资料。 预览底片保留原片自带字幕，这些不是模板文字层；实际使用请换无字视频。透明导出仅含本模板的可改元素。",
+    "tpl": {
+      "background": "../../assets/V04/product.jpg",
+      "image": "../../assets/V04/proof_real.jpg",
+      "x": 63,
+      "y": 666,
+      "w": 202,
+      "h": 286,
+      "start": 0.02
+    },
+    "observation": "产品镜头保持全屏，真实凭证直角缩图在左下硬切出现。",
+    "related": [
+      "R16"
+    ]
+  },
+  {
+    "id": "R34",
+    "name": "草本成分六圆递进",
+    "section": "E",
+    "kind": "ingredients",
+    "status": "待评审",
+    "when": "在产品实拍上分批介绍多个成分或组成项",
+    "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+    "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+    "source": "V04 00:17（17.65s）",
+    "source_video": "V04",
+    "source_time": 17.65,
+    "source_ref_time": 19.0,
+    "transparent": true,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R34_草本成分六圆递进",
+    "notes": "图片与文字已分层。演示圆图来自原片并修补旧字，植物纹理和无字底图存在修补差异；须以实际产品资料替换成分名称。 预览底片保留原片自带字幕，这些不是模板文字层；实际使用请换无字视频。透明导出仅含本模板的可改元素。",
+    "tpl": {
+      "background": "../../assets/V04/ingredient_bg.jpg",
+      "images": [
+        "../../assets/V04/ingredient_0.jpg",
+        "../../assets/V04/ingredient_1.jpg",
+        "../../assets/V04/ingredient_2.jpg",
+        "../../assets/V04/ingredient_3.jpg",
+        "../../assets/V04/ingredient_4.jpg",
+        "../../assets/V04/ingredient_5.jpg"
+      ],
+      "labels": [
+        "侧柏叶",
+        "姜根",
+        "山茶籽",
+        "何首乌",
+        "人参",
+        "当归"
+      ],
+      "positions": [
+        [
+          54,
+          54,
+          123
+        ],
+        [
+          220,
+          54,
+          132
+        ],
+        [
+          398,
+          54,
+          132
+        ],
+        [
+          74,
+          240,
+          124
+        ],
+        [
+          231,
+          250,
+          134
+        ],
+        [
+          396,
+          230,
+          148
+        ]
+      ],
+      "times": [
+        0,
+        0.18,
+        0.27,
+        0.54,
+        0.67,
+        0.8
+      ],
+      "fontSize": 40
+    },
+    "observation": "上部六张圆形成分图按上排、下排陆续累积出现，中心叠白色黑边标签。",
+    "related": []
+  },
+  {
+    "id": "R35",
+    "name": "报告墙与中下口播人物",
+    "section": "L",
+    "kind": "reportWall",
+    "status": "待评审",
+    "when": "讲解多份真实报告或证明材料时保留口播人物",
+    "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+    "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+    "source": "V04 00:19（19.75s）",
+    "source_video": "V04",
+    "source_time": 19.75,
+    "source_ref_time": 20.5,
+    "transparent": false,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R35_报告墙与中下口播人物",
+    "notes": "报告素材均为原片截图局部，部分位置重复用于示意布局，不能当作完整报告；原人物静帧蒙版边缘仍需精修。实际复用应换完整真实报告与透明口播。",
+    "tpl": {
+      "images": [
+        "../../assets/V04/report_real_0.jpg",
+        "../../assets/V04/report_real_1.jpg",
+        "../../assets/V04/report_real_2.jpg",
+        "../../assets/V04/report_real_3.jpg"
+      ],
+      "foreground": "../../assets/V04/report_host.png",
+      "foregroundX": 0,
+      "foregroundY": 0,
+      "foregroundW": 720,
+      "text": "还有那么多",
+      "fontSize": 48
+    },
+    "observation": "浅纸纹底铺多张报告，带轻阴影；中下叠透明人物，上下层分离。",
+    "related": [
+      "R11",
+      "R15"
+    ]
+  },
+  {
+    "id": "R36",
+    "name": "花园背景与左下口播",
+    "section": "L",
+    "kind": "roseScene",
+    "status": "待评审",
+    "when": "讲香味、氛围等感受时切换场景背景",
+    "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+    "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+    "source": "V04 00:24（24.40s）",
+    "source_video": "V04",
+    "source_time": 24.4,
+    "source_ref_time": 26.2,
+    "transparent": false,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R36_花园背景与左下口播",
+    "notes": "花园底图为原片花丛局部静帧放大，构图和运动不等同原动态背景；口播为静帧蒙版，换透明视频可动。",
+    "tpl": {
+      "background": "../../assets/V04/rose_bg.jpg",
+      "foreground": "../../assets/V04/rose_host.png",
+      "text": "雾玫瑰的高级香",
+      "second": "真的好好闻！",
+      "textX": 250,
+      "textY": 554,
+      "fontSize": 46,
+      "color": "#eeecc0",
+      "switchAt": 1.55
+    },
+    "observation": "玫瑰花园全屏，口播人物置左下；上方浅金字幕斜置，随后切换为白色短句。",
+    "related": [
+      "R11"
+    ]
+  },
+  {
+    "id": "R37",
+    "name": "虚线圆形跟随放大镜",
+    "section": "E",
+    "kind": "magnifier",
+    "status": "待评审",
+    "when": "产品局部、标签或细节需要放大时",
+    "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+    "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+    "source": "V04 00:28（28.10s）",
+    "source_video": "V04",
+    "source_time": 28.1,
+    "source_ref_time": 28.7,
+    "transparent": true,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R37_虚线圆形跟随放大镜",
+    "notes": "圆内从同一无字静帧重新取样放大，圆心轨迹为对照原片手动近似；实际视频须设置相应跟随坐标。 预览底片保留原片自带字幕，这些不是模板文字层；实际使用请换无字视频。透明导出仅含本模板的可改元素。",
+    "tpl": {
+      "background": "../../assets/V04/magnify_bg.jpg",
+      "image": "../../assets/V04/magnify_bg.jpg",
+      "radius": 145,
+      "zoom": 1.32,
+      "keyframes": [
+        [
+          0,
+          345,
+          785
+        ],
+        [
+          1,
+          360,
+          780
+        ],
+        [
+          2,
+          374,
+          764
+        ],
+        [
+          3,
+          360,
+          777
+        ]
+      ],
+      "dash": 18,
+      "gap": 11,
+      "strokeWidth": 5,
+      "color": "#ffffff",
+      "enterDuration": 0.12
+    },
+    "observation": "标签处出现白色虚线圆，圆内实像放大，圆心随目标小范围移动。",
+    "related": []
+  },
+  {
+    "id": "R38",
+    "name": "跟随人脸的柔边聚光灯",
+    "section": "E",
+    "kind": "spotlight",
+    "status": "待评审",
+    "when": "突出说话人表情或一句重点判断",
+    "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+    "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+    "source": "V04 00:30（30.08s）",
+    "source_video": "V04",
+    "source_time": 30.08,
+    "source_ref_time": 30.5,
+    "transparent": true,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R38_跟随人脸的柔边聚光灯",
+    "notes": "预览使用未压暗的相邻帧，不是原片已经压暗的底图；轨迹为手动近似。支持透明遮罩，可直接叠口播。 预览底片保留原片自带字幕，这些不是模板文字层；实际使用请换无字视频。透明导出仅含本模板的可改元素。",
+    "tpl": {
+      "background": "../../assets/V04/spot_bg.jpg",
+      "radius": 255,
+      "feather": 28,
+      "darkness": 0.58,
+      "keyframes": [
+        [
+          0,
+          365,
+          500
+        ],
+        [
+          1,
+          360,
+          520
+        ],
+        [
+          2,
+          385,
+          510
+        ],
+        [
+          3,
+          370,
+          520
+        ]
+      ],
+      "enterDuration": 0.08
+    },
+    "observation": "整屏压暗，人脸附近保留柔边亮圆，圆心随脸移动；无额外装饰线。",
+    "related": []
+  },
+  {
+    "id": "R39",
+    "name": "双行白金结果字幕",
+    "section": "S",
+    "kind": "twoLine",
+    "status": "待评审",
+    "when": "数量或利益点的结尾总结",
+    "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+    "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+    "source": "V04 00:36（36.15s）",
+    "source_video": "V04",
+    "source_time": 36.15,
+    "source_ref_time": 36.8,
+    "transparent": true,
+    "width": 720,
+    "height": 1280,
+    "duration": 3,
+    "folder": "R39_双行白金结果字幕",
+    "notes": "数量、使用时长仅为原片示例文字；模板复用时填写已确认的文案。",
+    "tpl": {
+      "background": "../../assets/V04/closing_bg.jpg",
+      "first": "买两瓶",
+      "segments": [
+        {
+          "text": "直接能用",
+          "color": "#ffffff"
+        },
+        {
+          "text": "大半年",
+          "color": "#eeecc0"
+        },
+        {
+          "text": "！",
+          "color": "#ffffff"
+        }
+      ],
+      "firstY": 932,
+      "secondY": 1007,
+      "fontSize": 44,
+      "strokeWidth": 2.5,
+      "delay": 0.18
+    },
+    "observation": "第一行白字短句先出现，第二行稍后进入，核心结果用浅金色强调。",
+    "related": [
+      "R31",
+      "R32"
+    ]
+  }
+]

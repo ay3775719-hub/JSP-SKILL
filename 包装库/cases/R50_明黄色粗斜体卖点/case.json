@@ -1,0 +1,35 @@
+{
+  "id": "R50",
+  "name": "明黄色粗斜体卖点",
+  "section": "C",
+  "kind": "boldClaim",
+  "status": "待评审",
+  "when": "短句强调版型或功能卖点",
+  "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+  "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+  "source": "V05 00:51（51.80s）",
+  "source_video": "V05",
+  "source_time": 51.8,
+  "source_ref_time": 52.0,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R50_明黄色粗斜体卖点",
+  "notes": "基于 R32 的重点词用途增加粗斜体与短阴影变体；原字体未提供。 预览底片改用原片无字上半区域裁切放大，以避免旧字幕与模板文字重叠。",
+  "tpl": {
+    "background": "../../assets/V05/clean_black.jpg",
+    "text": "浪漫且有生命力",
+    "x": 360,
+    "y": 916,
+    "fontSize": 49,
+    "color": "#f3f78c",
+    "angle": 0,
+    "shadow": "#6e713e"
+  },
+  "observation": "明黄/浅黄粗斜体大字带立体短阴影，单句出现，保留口播主体。",
+  "related": [
+    "R32"
+  ],
+  "variant": true
+}

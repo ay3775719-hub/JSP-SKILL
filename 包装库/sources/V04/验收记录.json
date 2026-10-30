@@ -1,0 +1,54 @@
+{
+  "libraryCount": 39,
+  "newCases": 9,
+  "checks": [
+    {
+      "id": "R31",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R32",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R33",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R34",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R35",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R36",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R37",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R38",
+      "decode": true,
+      "deterministic": true
+    },
+    {
+      "id": "R39",
+      "decode": true,
+      "deterministic": true
+    }
+  ],
+  "browserErrors": [],
+  "audio": "静音预览，未试听原片",
+  "status": "待评审初稿"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "R43",
+  "name": "头顶弧形吐槽白字",
+  "section": "C",
+  "kind": "arcCaption",
+  "status": "待评审",
+  "when": "表现冷、尴尬等反应的短句吐槽",
+  "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+  "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+  "source": "V05 00:15（15.30s）",
+  "source_video": "V05",
+  "source_time": 15.3,
+  "source_ref_time": 15.3,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R43_头顶弧形吐槽白字",
+  "notes": "弧度、字号与字距独立可改；预览使用相邻镜头，避免把原片已有弧字重复叠入。",
+  "tpl": {
+    "background": "../../assets/V05/black_host.jpg",
+    "text": "根本就是不敢脱",
+    "cx": 360,
+    "cy": 480,
+    "radius": 310,
+    "span": 1.18,
+    "fontSize": 47,
+    "color": "#ffffff",
+    "stroke": "#111111",
+    "strokeWidth": 7,
+    "vignette": true
+  },
+  "observation": "白色粗字黑边沿人物头顶弧形排列，画面四周有暗角。",
+  "related": [
+    "R04"
+  ],
+  "variant": false
+}

@@ -1,0 +1,50 @@
+{
+  "id": "R45",
+  "name": "径向速度线与斜词标签",
+  "section": "E",
+  "kind": "speedLines",
+  "status": "待评审",
+  "when": "集中指出两个问题或制造短促冲击感",
+  "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+  "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+  "source": "V05 00:21（21.25s）",
+  "source_video": "V05",
+  "source_time": 21.25,
+  "source_ref_time": 21.25,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R45_径向速度线与斜词标签",
+  "notes": "速度线密度和相位为手工近似，不是逐根追踪原素材。",
+  "tpl": {
+    "background": "../../assets/V05/black_host.jpg",
+    "labels": [
+      {
+        "text": "勒肉",
+        "x": 75,
+        "y": 530,
+        "angle": -9
+      },
+      {
+        "text": "臃肿",
+        "x": 535,
+        "y": 705,
+        "angle": 20
+      }
+    ],
+    "fontSize": 56,
+    "strokeWidth": 9,
+    "center": [
+      360,
+      630
+    ],
+    "count": 38,
+    "start": 0
+  },
+  "observation": "白色放射线从四边朝中心汇聚，两个黑字白边标签歪斜落在身体两侧。",
+  "related": [
+    "R04"
+  ],
+  "variant": false
+}

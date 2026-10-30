@@ -1,0 +1,47 @@
+{
+  "id": "R46",
+  "name": "三图版型说明与手绘箭头",
+  "section": "L",
+  "kind": "detailTriptych",
+  "status": "待评审",
+  "when": "介绍肩型、收腰、袖长等多个设计细节",
+  "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+  "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+  "source": "V05 00:31（31.20s）",
+  "source_video": "V05",
+  "source_time": 31.2,
+  "source_ref_time": 34.5,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R46_三图版型说明与手绘箭头",
+  "notes": "图片取自原片；部分箭头触及截图边缘，复刻稿重新绘制独立箭头，局部构图近似。",
+  "tpl": {
+    "paper": "../../assets/V05/paper.jpg",
+    "images": [
+      "../../assets/V05/detail_0.jpg",
+      "../../assets/V05/detail_1.jpg",
+      "../../assets/V05/detail_2.jpg"
+    ],
+    "labels": [
+      "直角正肩",
+      "收腰设计",
+      "袖子加长款"
+    ],
+    "subtitle": "The OOTD",
+    "heading": "Colour",
+    "tag": "DAILYLOOK",
+    "times": [
+      0,
+      0.6,
+      1.2
+    ]
+  },
+  "observation": "三张细节图错落排列，黑色粗斜体标签加英文小字，虚线/手绘曲线箭头指向对应细节。",
+  "related": [
+    "R07",
+    "R27"
+  ],
+  "variant": false
+}

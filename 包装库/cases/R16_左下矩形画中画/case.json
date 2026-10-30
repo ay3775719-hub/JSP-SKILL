@@ -1,0 +1,23 @@
+{
+  "id": "R16",
+  "name": "左下矩形画中画",
+  "section": "L",
+  "kind": "pip",
+  "status": "待评审",
+  "when": "口播旁展示旧视频或穿搭证据",
+  "how": "修改 effect.html 顶部的 TPL 参数；图片槽填本地相对路径；start/duration 控制时间。",
+  "sfx": "静音预览；原片音效未试听，未臆配。",
+  "source": "V02 00:18（定位帧 18.00s）",
+  "source_video": "V02",
+  "source_time": 18,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R16_左下矩形画中画",
+  "notes": "原片画中画示例裁切，实际可替换视频文件。",
+  "tpl": {
+    "background": "../../assets/host2.jpg",
+    "image": "../../assets/pip.jpg"
+  }
+}

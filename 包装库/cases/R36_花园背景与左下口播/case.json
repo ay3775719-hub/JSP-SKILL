@@ -1,0 +1,35 @@
+{
+  "id": "R36",
+  "name": "花园背景与左下口播",
+  "section": "L",
+  "kind": "roseScene",
+  "status": "待评审",
+  "when": "讲香味、氛围等感受时切换场景背景",
+  "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+  "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+  "source": "V04 00:24（24.40s）",
+  "source_video": "V04",
+  "source_time": 24.4,
+  "source_ref_time": 26.2,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R36_花园背景与左下口播",
+  "notes": "花园底图为原片花丛局部静帧放大，构图和运动不等同原动态背景；口播为静帧蒙版，换透明视频可动。",
+  "tpl": {
+    "background": "../../assets/V04/rose_bg.jpg",
+    "foreground": "../../assets/V04/rose_host.png",
+    "text": "雾玫瑰的高级香",
+    "second": "真的好好闻！",
+    "textX": 250,
+    "textY": 554,
+    "fontSize": 46,
+    "color": "#eeecc0",
+    "switchAt": 1.55
+  },
+  "observation": "玫瑰花园全屏，口播人物置左下；上方浅金字幕斜置，随后切换为白色短句。",
+  "related": [
+    "R11"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "R22",
+  "name": "人物身后Look编号",
+  "section": "L",
+  "kind": "behindLook",
+  "status": "待评审",
+  "when": "新一套穿搭亮相；支持 Look1/2/3",
+  "how": "修改 effect.html 顶部的 TPL 参数；图片槽填本地相对路径；start/duration 控制时间。",
+  "sfx": "静音预览；原片音效未试听，未臆配。",
+  "source": "V03 00:10（定位帧 10.00s）",
+  "source_video": "V03",
+  "source_time": 10,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R22_人物身后Look编号",
+  "notes": "必须使用分离背景和透明前景。演示蒙版为静帧手工轮廓，原背景去字有修补。",
+  "tpl": {
+    "background": "../../assets/wood.jpg",
+    "foreground": "../../assets/lookfg.png",
+    "text": "Look1",
+    "color": "#80d49a",
+    "fontSize": 230,
+    "foregroundX": 220,
+    "foregroundY": 370,
+    "foregroundW": 212
+  }
+}

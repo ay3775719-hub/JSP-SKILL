@@ -1,0 +1,6 @@
+{
+  "pop": {"peak_frame": 1, "gain_db": -3},
+  "whoosh": {"peak_frame": 8, "gain_db": -4},
+  "pencil": {"peak_frame": 4, "gain_db": -5},
+  "impact": {"peak_frame": 0, "gain_db": -3}
+}

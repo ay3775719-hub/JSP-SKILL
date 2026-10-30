@@ -1,0 +1,28 @@
+{
+  "id": "R19",
+  "name": "绿色通勤章节标题",
+  "section": "T",
+  "kind": "scriptTitle",
+  "status": "待评审",
+  "when": "通勤穿搭章节开场",
+  "how": "修改 effect.html 顶部的 TPL 参数；图片槽填本地相对路径；start/duration 控制时间。",
+  "sfx": "静音预览；原片音效未试听，未臆配。",
+  "source": "V03 00:06（定位帧 6.00s）",
+  "source_video": "V03",
+  "source_time": 6,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R19_绿色通勤章节标题",
+  "notes": "清理底图在原字区域有修补痕迹；换原始无字视频即可消除。 预览背景使用相邻的无大标题镜头；更换无字原视频后使用。",
+  "tpl": {
+    "background": "../../assets/work.jpg",
+    "text": "Go to",
+    "second": "Work",
+    "subtitle": "with new outfit",
+    "color": "#83d49a",
+    "fontSize": 150,
+    "y": 400
+  }
+}

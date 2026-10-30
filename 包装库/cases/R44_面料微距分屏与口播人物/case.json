@@ -1,0 +1,34 @@
+{
+  "id": "R44",
+  "name": "面料微距分屏与口播人物",
+  "section": "L",
+  "kind": "fabricSplit",
+  "status": "待评审",
+  "when": "一边展示材质细节，一边保留口播说明",
+  "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+  "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+  "source": "V05 00:17（17.00s）",
+  "source_video": "V05",
+  "source_time": 17.0,
+  "source_ref_time": 17.0,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R44_面料微距分屏与口播人物",
+  "notes": "微距使用原片干净局部放大；口播蒙版为静帧轮廓，发丝与衣边仍需精修。",
+  "tpl": {
+    "image": "../../assets/V05/fabric_closeup.jpg",
+    "foreground": "../../assets/V05/detail_foreground.png",
+    "text": "面料粗糙",
+    "topHeight": 620,
+    "labelX": 188,
+    "labelY": 465
+  },
+  "observation": "上半屏铺面料微距、下半屏黑底，右侧抠出小口播人物跨越分界；圆章形标签压在微距上。",
+  "related": [
+    "R11",
+    "R16"
+  ],
+  "variant": false
+}

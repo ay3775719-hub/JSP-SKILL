@@ -1,0 +1,48 @@
+{
+  "id": "R39",
+  "name": "双行白金结果字幕",
+  "section": "S",
+  "kind": "twoLine",
+  "status": "待评审",
+  "when": "数量或利益点的结尾总结",
+  "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+  "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+  "source": "V04 00:36（36.15s）",
+  "source_video": "V04",
+  "source_time": 36.15,
+  "source_ref_time": 36.8,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R39_双行白金结果字幕",
+  "notes": "数量、使用时长仅为原片示例文字；模板复用时填写已确认的文案。",
+  "tpl": {
+    "background": "../../assets/V04/closing_bg.jpg",
+    "first": "买两瓶",
+    "segments": [
+      {
+        "text": "直接能用",
+        "color": "#ffffff"
+      },
+      {
+        "text": "大半年",
+        "color": "#eeecc0"
+      },
+      {
+        "text": "！",
+        "color": "#ffffff"
+      }
+    ],
+    "firstY": 932,
+    "secondY": 1007,
+    "fontSize": 44,
+    "strokeWidth": 2.5,
+    "delay": 0.18
+  },
+  "observation": "第一行白字短句先出现，第二行稍后进入，核心结果用浅金色强调。",
+  "related": [
+    "R31",
+    "R32"
+  ]
+}

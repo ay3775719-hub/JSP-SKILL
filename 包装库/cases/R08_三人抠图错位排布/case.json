@@ -1,0 +1,29 @@
+{
+  "id": "R08",
+  "name": "三人抠图错位排布",
+  "section": "L",
+  "kind": "lineup",
+  "status": "待评审",
+  "when": "同一风格的三套穿搭集中展示",
+  "how": "修改 effect.html 顶部的 TPL 参数；图片槽填本地相对路径；start/duration 控制时间。",
+  "sfx": "静音预览；原片音效未试听，未臆配。",
+  "source": "V01 00:16（定位帧 16.00s）",
+  "source_video": "V01",
+  "source_time": 16,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R08_三人抠图错位排布",
+  "notes": "演示人像为手工轮廓蒙版，发丝与脚边需精修；换图时提供透明 PNG。",
+  "tpl": {
+    "background": "../../assets/satin.jpg",
+    "images": [
+      "../../assets/girl.png",
+      "../../assets/girl2.png",
+      "../../assets/girl3.png"
+    ],
+    "heading": "Statement Piece",
+    "subtitle": "wanwan share"
+  }
+}

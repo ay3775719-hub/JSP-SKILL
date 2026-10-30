@@ -1,0 +1,51 @@
+{
+  "id": "R38",
+  "name": "跟随人脸的柔边聚光灯",
+  "section": "E",
+  "kind": "spotlight",
+  "status": "待评审",
+  "when": "突出说话人表情或一句重点判断",
+  "how": "修改 effect.html 顶部 TPL；所有时间和轨迹由 render(t) 驱动；替换图片槽时填本地相对路径。",
+  "sfx": "静音预览；原片声音尚未试听，不臆配音效。",
+  "source": "V04 00:30（30.08s）",
+  "source_video": "V04",
+  "source_time": 30.08,
+  "source_ref_time": 30.5,
+  "transparent": true,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R38_跟随人脸的柔边聚光灯",
+  "notes": "预览使用未压暗的相邻帧，不是原片已经压暗的底图；轨迹为手动近似。支持透明遮罩，可直接叠口播。 预览底片保留原片自带字幕，这些不是模板文字层；实际使用请换无字视频。透明导出仅含本模板的可改元素。",
+  "tpl": {
+    "background": "../../assets/V04/spot_bg.jpg",
+    "radius": 255,
+    "feather": 28,
+    "darkness": 0.58,
+    "keyframes": [
+      [
+        0,
+        365,
+        500
+      ],
+      [
+        1,
+        360,
+        520
+      ],
+      [
+        2,
+        385,
+        510
+      ],
+      [
+        3,
+        370,
+        520
+      ]
+    ],
+    "enterDuration": 0.08
+  },
+  "observation": "整屏压暗，人脸附近保留柔边亮圆，圆心随脸移动；无额外装饰线。",
+  "related": []
+}

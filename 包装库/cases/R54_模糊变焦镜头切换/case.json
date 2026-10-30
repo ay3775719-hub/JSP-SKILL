@@ -1,0 +1,36 @@
+{
+  "id": "R54",
+  "name": "模糊变焦镜头切换",
+  "section": "E",
+  "kind": "blurTransition",
+  "status": "待评审",
+  "when": "从细节、造型或章节切换到下一个镜头",
+  "how": "修改 effect.html 顶部 TPL，包含文字、图片槽、位置、颜色、入场时间。window.render(t) 可逐帧绘制。",
+  "sfx": "静音预览；原片音效尚未试听，不推断音效。",
+  "source": "V05 00:19（19.50s）",
+  "source_video": "V05",
+  "source_time": 19.5,
+  "source_ref_time": 20,
+  "transparent": false,
+  "width": 720,
+  "height": 1280,
+  "duration": 3,
+  "folder": "R54_模糊变焦镜头切换",
+  "notes": "用缩放与高斯模糊近似原片的方向性拖影，未复刻光流/逐像素运动模糊。",
+  "tpl": {
+    "images": [
+      "../../assets/V05/black_host.jpg",
+      "../../assets/V05/purple_host.jpg"
+    ],
+    "transitionAt": 1,
+    "duration": 0.34,
+    "blur": 17,
+    "zoom": 1.16,
+    "shift": 28
+  },
+  "observation": "切换附近短暂出现模糊、缩放与水平拖移，随即恢复清晰画面。",
+  "related": [
+    "R29"
+  ],
+  "variant": false
+}
